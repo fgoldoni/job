@@ -1,33 +1,9 @@
 @extends('layouts.admin.base')
 
 @section('body')
-    <!--
-  This example requires Tailwind CSS v2.0+
-
-  This example requires some changes to your config:
-
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
-    <!--
-      This example requires updating your template:
-
-      ```
-      <html class="h-full bg-gray-100">
-      <body class="h-full">
-      ```
-    -->
-    <div>
+    <div x-data="{ sidebarOpen: false }" @keydown.window.escape="sidebarOpen = false">
         <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
-        <div class="fixed inset-0 flex z-40 md:hidden" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 flex z-40 md:hidden" role="dialog" aria-modal="true" x-show="sidebarOpen">
             <!--
               Off-canvas menu overlay, show/hide based on off-canvas menu state.
 
@@ -38,7 +14,14 @@
                 From: "opacity-100"
                 To: "opacity-0"
             -->
-            <div class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
+            <div x-show="sidebarOpen"
+                 x-transition:enter="transition-opacity ease-linear duration-300"
+                 x-transition:enter-start="opacity-0"
+                 x-transition:enter-end="opacity-100"
+                 x-transition:leave="transition-opacity ease-linear duration-300"
+                 x-transition:leave-start="opacity-100"
+                 x-transition:leave-end="opacity-0"
+                 class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
 
             <!--
               Off-canvas menu, show/hide based on off-canvas menu state.
@@ -50,7 +33,14 @@
                 From: "translate-x-0"
                 To: "-translate-x-full"
             -->
-            <div class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-white">
+            <div    x-show="sidebarOpen"
+                    x-transition:enter="transition ease-in-out duration-300 transform"
+                    x-transition:enter-start="-translate-x-full"
+                    x-transition:enter-end="translate-x-0"
+                    x-transition:leave="transition ease-in-out duration-300 transform"
+                    x-transition:leave-start="translate-x-0"
+                    x-transition:leave-end="-translate-x-full"
+                    class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-white">
                 <!--
                   Close button, show/hide based on off-canvas menu state.
 
@@ -61,8 +51,15 @@
                     From: "opacity-100"
                     To: "opacity-0"
                 -->
-                <div class="absolute top-0 right-0 -mr-12 pt-2">
-                    <button type="button" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <div  x-show="sidebarOpen"
+                      x-transition:enter="ease-in-out duration-300"
+                      x-transition:enter-start=opacity-0"
+                      x-transition:enter-end="opacity-100"
+                      x-transition:leave="ease-in-out duration-300"
+                      x-transition:leave-start="opacity-100"
+                      x-transition:leave-end="opacity-0"
+                      class="absolute top-0 right-0 -mr-12 pt-2">
+                    <button  @click="sidebarOpen = false" type="button" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                         <span class="sr-only">Close sidebar</span>
                         <!-- Heroicon name: outline/x -->
                         <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -204,7 +201,7 @@
         </div>
         <div class="md:pl-64 flex flex-col flex-1">
             <div class="sticky top-0 z-10 flex-shrink-0 flex h-16 bg-white shadow">
-                <button type="button" class="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden">
+                <button  @click.stop="sidebarOpen = true" type="button" class="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden">
                     <span class="sr-only">Open sidebar</span>
                     <!-- Heroicon name: outline/menu-alt-2 -->
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -237,7 +234,7 @@
 
                         <!-- Profile dropdown -->
                         <div class="ml-3 relative">
-                            <x-jet.dropdown align="right" width="48">
+                            <x-jet.dropdown align="right" width="w-60">
                                 <x-slot name="trigger">
                                     <button type="button" class="max-w-xs bg-white rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 lg:p-2 lg:rounded-md lg:hover:bg-gray-50" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                         <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
