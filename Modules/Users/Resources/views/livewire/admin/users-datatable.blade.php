@@ -1,82 +1,48 @@
 <div class="py-4">
-    <div class="text-gray-900  bg-gray-300  text-sm">
-        <nav class="text-gray-900 px-4 py-3 flex items-center justify-between">
-            <div class="flex items-center space-x-4">
-                <div class="relative">
-                    <input type="text" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md w-72" placeholder="Search Items ...">
-                </div>
-                <ul class="flex items-center font-demibold space-x-4">
-                    <li class="block lg:hidden">
-                        <a href="#" class="hover:text-gray-400">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="hidden lg:block">
-                        <a href="#" class="hover:text-gray-400">Advanced Search ...</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="flex items-center space-x-5 text-white">
-                <a href="#" class="text-gray-900 hover:text-gray-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+    <!-- Top Bar -->
+    <x-toolbar>
+        <x-slot name="search">
+            <x-toolbar.search wire:model="filters.search" placeholder="Search Items ..."></x-toolbar.search>
+        </x-slot>
+        <x-slot name="advancedSearch">
+            <x-button.link wire:click="toggleShowFilters">@if ($showFilters) Hide @endif Advanced Search...</x-button.link>
+        </x-slot>
+        <x-slot name="actions">
+            <x-toolbar.actions>
+                <x-toolbar.actions.item wire:click="create">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
                     </svg>
-                </a>
-                <a href="#" class="text-gray-900 hover:text-gray-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
-                    </svg>
-                </a>
-                <a href="#" class="text-gray-900 hover:text-gray-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                </x-toolbar.actions.item>
+
+                <x-toolbar.actions.item wire:click="$toggle('showDeleteModal')">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
                     </svg>
-                </a>
-                <a href="#" class="hidden lg:block text-gray-900 text-gray-600">
-                    <select id="location" name="location" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
-                        <option>10</option>
-                        <option selected>25</option>
-                        <option>50</option>
-                    </select>
-                </a>
-            </div>
-        </nav>
-    </div>
-    <!-- Top Bar -->
-    <div class="flex justify-between">
-        <div class="w-2/4 flex space-x-4">
-            <x-input.text wire:model="filters.search" type="text" placeholder="Search Items ..." />
+                </x-toolbar.actions.item>
 
-            <x-button.link wire:click="toggleShowFilters">@if ($showFilters) Hide @endif Advanced Search...</x-button.link>
-        </div>
+                <x-toolbar.actions.item wire:click="exportSelected">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd" />
+                    </svg>
+                </x-toolbar.actions.item>
 
-        <div class="space-x-2 flex items-center">
-            <x-input.group borderless paddingless for="perPage" label="Per Page">
-                <x-input.select wire:model="perPage" id="perPage">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                </x-input.select>
-            </x-input.group>
-
-            <x-dropdown label="Bulk Actions">
-                <x-dropdown.item type="button" wire:click="exportSelected" class="flex items-center space-x-2">
-                    <x-icon.download class="text-gray-400"/> <span>Export</span>
-                </x-dropdown.item>
-
-                <x-dropdown.item type="button" wire:click="$toggle('showDeleteModal')" class="flex items-center space-x-2">
-                    <x-icon.trash class="text-gray-400"/> <span>Delete</span>
-                </x-dropdown.item>
-            </x-dropdown>
-
-
-
-            <x-button.primary wire:click="create"><x-icon.plus/> New</x-button.primary>
-        </div>
-    </div>
+                <x-toolbar.actions.item>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
+                    </svg>
+                </x-toolbar.actions.item>
+            </x-toolbar.actions>
+        </x-slot>
+        <x-slot name="perPage">
+            <x-input.select wire:model="perPage" id="perPage" class="block w-full pl-3 pr-10 px-3 py-1 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+            </x-input.select>
+        </x-slot>
+    </x-toolbar>
 
     <!-- Advanced Search -->
     <div>
@@ -118,7 +84,7 @@
     </div>
 
 
-    <div class="py-4 space-y-4">
+    <div class="space-y-4">
         <!-- Users Table -->
         <div class="flex-col space-y-4">
             <x-table>
