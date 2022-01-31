@@ -42,6 +42,20 @@ return [
             'visibility' => 'public',
         ],
 
+        'avatars' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/avatars'),
+            'url' => env('APP_URL').'/avatars',
+            'visibility' => 'public',
+        ],
+
+        'attachments' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/attachments'),
+            'url' => env('APP_URL').'/attachments',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -68,6 +82,8 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('avatars') => storage_path('app/public/avatars'),
+        public_path('attachments') => storage_path('app/public/attachments'),
     ],
 
 ];

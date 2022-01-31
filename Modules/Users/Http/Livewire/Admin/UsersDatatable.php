@@ -8,14 +8,20 @@ use App\Http\Livewire\DataTable\WithPerPagePagination;
 use App\Http\Livewire\DataTable\WithSorting;
 use App\Models\User;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class UsersDatatable extends Component
 {
-    use WithPerPagePagination, WithSorting, WithBulkActions, WithCachedRows;
+    use WithPerPagePagination, WithSorting, WithBulkActions, WithCachedRows, WithFileUploads;
 
     public $showDeleteModal = false;
+
     public $showEditModal = false;
+
     public $showFilters = false;
+
+    public $avatar;
+
     public $filters = [
         'search' => '',
         'status' => '',
@@ -24,6 +30,7 @@ class UsersDatatable extends Component
         'date-min' => null,
         'date-max' => null,
     ];
+
     public User $editing;
 
     protected $queryString = ['sorts'];
@@ -31,10 +38,9 @@ class UsersDatatable extends Component
     protected $listeners = ['refreshUsers' => '$refresh'];
 
     public function rules() { return [
-        'editing.title' => 'required|min:3',
-        'editing.amount' => 'required',
-        'editing.status' => 'required|in:'.collect(User::STATUSES)->keys()->implode(','),
-        'editing.date_for_editing' => 'required',
+        'editing.name' => 'required|min:3',
+        'editing.email' => 'required',
+        'avatar' => 'nullable|image|max:1000',
     ]; }
 
     public function mount() { $this->editing = $this->makeBlankUser(); }
@@ -44,18 +50,17 @@ class UsersDatatable extends Component
     {
         return response()->streamDownload(function () {
             echo $this->selectedRowsQuery->toCsv();
-        }, 'transactions.csv');
+        }, 'users.csv');
     }
 
-    public function deleteSelected()
-    {
+    public function deleteSelected(){
         $deleteCount = $this->selectedRowsQuery->count();
 
         $this->selectedRowsQuery->delete();
 
         $this->showDeleteModal = false;
 
-        $this->notify('You\'ve deleted '.$deleteCount.' transactions');
+        $this->notify('You\'ve deleted '.$deleteCount.' users');
     }
 
     public function makeBlankUser()
@@ -79,11 +84,11 @@ class UsersDatatable extends Component
         $this->showEditModal = true;
     }
 
-    public function edit(User $transaction)
+    public function edit(User $user)
     {
         $this->useCachedRows();
 
-        if ($this->editing->isNot($transaction)) $this->editing = $transaction;
+        if ($this->editing->isNot($user)) $this->editing = $user;
 
         $this->showEditModal = true;
     }
@@ -94,6 +99,14 @@ class UsersDatatable extends Component
 
         $this->editing->save();
 
+        $this->avatar && $this->editing->update([
+            'avatar_path' => $this->avatar->store('/', 'avatars'),
+        ]);
+
+        if (isset($this->avatar)) {
+            $this->editing->updateAvatar($this->avatar);
+        }
+
         $this->showEditModal = false;
     }
 
@@ -101,7 +114,8 @@ class UsersDatatable extends Component
 
     public function getRowsQueryProperty()
     {
-        $query = User::query();
+        $query = User::query()
+            ->when($this->filters['search'], fn($query, $search) => $query->where('name', 'like', '%'.$search.'%'));
 
         return $this->applySorting($query);
     }
@@ -115,8 +129,7 @@ class UsersDatatable extends Component
 
     public function render()
     {
-        return view('users::livewire.admin.users-datatable', [ 'transactions' => $this->rows ])
-            ->extends('layouts.admin.app')
-            ->section('content');
+        return view('users::livewire.admin.users-datatable', [ 'items' => $this->rows ])
+            ->extends('layouts.admin.app');
     }
 }

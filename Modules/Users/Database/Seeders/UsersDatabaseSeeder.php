@@ -2,6 +2,7 @@
 
 namespace Modules\Users\Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,6 +17,16 @@ class UsersDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        $user = User::factory()->create(['email' => 'admin@admin.com']);
+
+        $user->assignRole('Administrator');
+
+        User::factory(50)->create();
+
+        $users = User::get();
+
+        foreach ($users as $user) {
+            $user->assignRole('User');
+        }
     }
 }

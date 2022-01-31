@@ -14,6 +14,7 @@
 		<link rel="shortcut icon" href="{{ url(asset('favicon.ico')) }}">
 
         <!-- Fonts -->
+        <link href="https://fonts.cdnfonts.com/css/operator-mono" rel="stylesheet">
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
         <!-- Styles -->
@@ -27,7 +28,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
 
-    <body class="h-full">
+    <body class="font-sans h-full">
         @yield('body')
 
         @livewireScripts
