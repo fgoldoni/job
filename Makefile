@@ -1,4 +1,4 @@
-.PHONY: install phpcs server test help optimize routes migrate watch chmod refresh move echo ansible test docker retry
+.PHONY: install phpcs server test help optimize routes migrate watch chmod refresh move echo ansible test docker retry rector
 
 .DEFAULT_GOAL = help
 PHP=php
@@ -18,9 +18,13 @@ help: ## Show this help.
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
 phpcs: ## PRS2 Validation
-	./vendor/bin/phpcbf --extensions=php -s
-	./vendor/bin/phpcs --extensions=php -s
-	./vendor/bin/php-cs-fixer fix --diff
+	./vendor/bin/phpcbf Modules --extensions=php -s
+	./vendor/bin/phpcs Modules --extensions=php -s
+	./vendor/bin/php-cs-fixer Modules fix --diff
+
+rector: ## PRS2 Validation
+	./vendor/bin/rector process --dry-run
+	./vendor/bin/rector process
 
 server: ## Load phpMyAdmin server
 	$(PHP) -S localhost:$(PORT) -t ../../phpMyAdmin

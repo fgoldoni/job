@@ -37,23 +37,36 @@ class UsersDatatable extends Component
 
     protected $listeners = ['refreshUsers' => '$refresh'];
 
-    public function rules() { return [
-        'editing.name' => 'required|min:3',
-        'editing.email' => 'required',
-        'avatar' => 'nullable|image|max:1000',
-    ]; }
+    public function rules()
+    {
+        return [
+            'editing.name' => 'required|min:3',
+            'editing.email' => 'required',
+            'avatar' => 'nullable|image|max:1000',
+        ];
+    }
 
-    public function mount() { $this->editing = $this->makeBlankUser(); }
-    public function updatedFilters() { $this->resetPage(); }
+    public function mount()
+    {
+        $this->editing = $this->makeBlankUser();
+    }
+
+    public function updatedFilters()
+    {
+        $this->resetPage();
+    }
 
     public function exportSelected()
     {
-        return response()->streamDownload(function () {
-            echo $this->selectedRowsQuery->toCsv();
-        }, 'users.csv');
+        return response()->streamDownload(
+            function () {
+                echo $this->selectedRowsQuery->toCsv();
+            }, 'users.csv'
+        );
     }
 
-    public function deleteSelected(){
+    public function deleteSelected()
+    {
         $deleteCount = $this->selectedRowsQuery->count();
 
         $this->selectedRowsQuery->delete();
@@ -79,7 +92,9 @@ class UsersDatatable extends Component
     {
         $this->useCachedRows();
 
-        if ($this->editing->getKey()) $this->editing = $this->makeBlankUser();
+        if ($this->editing->getKey()) {
+            $this->editing = $this->makeBlankUser();
+        }
 
         $this->showEditModal = true;
     }
@@ -88,7 +103,10 @@ class UsersDatatable extends Component
     {
         $this->useCachedRows();
 
-        if ($this->editing->isNot($user)) $this->editing = $user;
+        if ($this->editing->isNot($user)) {
+            $this->editing = $user->load('roles:id,name');
+            $this->avatar = null;
+        }
 
         $this->showEditModal = true;
     }
@@ -99,9 +117,11 @@ class UsersDatatable extends Component
 
         $this->editing->save();
 
-        $this->avatar && $this->editing->update([
+        $this->avatar && $this->editing->update(
+            [
             'avatar_path' => $this->avatar->store('/', 'avatars'),
-        ]);
+            ]
+        );
 
         if (isset($this->avatar)) {
             $this->editing->updateAvatar($this->avatar);
@@ -110,7 +130,10 @@ class UsersDatatable extends Component
         $this->showEditModal = false;
     }
 
-    public function resetFilters() { $this->reset('filters'); }
+    public function resetFilters()
+    {
+        $this->reset('filters');
+    }
 
     public function getRowsQueryProperty()
     {
@@ -122,9 +145,11 @@ class UsersDatatable extends Component
 
     public function getRowsProperty()
     {
-        return $this->cache(function () {
-            return $this->applyPagination($this->rowsQuery);
-        });
+        return $this->cache(
+            function () {
+                return $this->applyPagination($this->rowsQuery);
+            }
+        );
     }
 
     public function render()

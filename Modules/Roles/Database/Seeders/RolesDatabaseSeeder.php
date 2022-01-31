@@ -28,8 +28,8 @@ class RolesDatabaseSeeder extends Seeder
         ];
 
         $insertPermissions = fn ($role) => collect($permissionsByRole[$role])
-        ->map(fn ($name) => DB::table('permissions')->insertGetId(['name' => $name, 'guard_name' => 'web']))
-        ->toArray();
+            ->map(fn ($name) => DB::table('permissions')->insertGetId(['name' => $name, 'guard_name' => 'web']))
+            ->toArray();
 
         $permissionIdsByRole = [
             'Administrator' => $insertPermissions('Administrator'),
@@ -42,11 +42,13 @@ class RolesDatabaseSeeder extends Seeder
 
             DB::table('role_has_permissions')
                 ->insert(
-                    collect($permissionIds)->map(fn ($id) => [
-                'role_id' => $role->id,
-                'permission_id' => $id
-            ])->toArray()
-            );
+                    collect($permissionIds)->map(
+                        fn ($id) => [
+                        'role_id' => $role->id,
+                        'permission_id' => $id
+                        ]
+                    )->toArray()
+                );
         }
     }
 }

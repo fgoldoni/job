@@ -13,8 +13,6 @@
 
 use Modules\Users\Http\Livewire\Admin\UsersDatatable;
 
-Route::prefix('admin')->group(function() {
+Route::prefix('admin')->group(function () {
     Route::get('/users', UsersDatatable::class)->name('admin.users');
 });
-
-
