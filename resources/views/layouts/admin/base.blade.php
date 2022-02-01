@@ -20,6 +20,8 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ url(mix('css/app.css')) }}">
         @livewireStyles
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+
 
         <!-- Scripts -->
         <script src="{{ url(mix('js/app.js')) }}" defer></script>
@@ -32,5 +34,7 @@
         @yield('body')
 
         @livewireScripts
+        <script src="https://unpkg.com/moment"></script>
+        <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
     </body>
 </html>

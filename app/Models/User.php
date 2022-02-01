@@ -7,14 +7,13 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Log;
 use Laravel\Sanctum\HasApiTokens;
-use PhpParser\Node\Stmt\DeclareDeclare;
+use Nicolaslopezj\Searchable\SearchableTrait;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles, HasAvatar;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, HasAvatar, SearchableTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -25,6 +24,14 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+    ];
+
+    protected $searchable = [
+        'columns' => [
+            'users.id' => 10,
+            'users.name' => 10,
+            'users.email' => 10,
+        ]
     ];
 
     /**
@@ -57,9 +64,8 @@ class User extends Authenticatable
     ];
 
     const STATUSES = [
-        'success' => 'Success',
-        'failed' => 'Failed',
-        'processing' => 'Processing',
+        'active' => 'Active',
+        'inactive' => 'Inactive',
     ];
 
     protected static function boot()

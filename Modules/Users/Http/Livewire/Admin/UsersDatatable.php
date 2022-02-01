@@ -7,6 +7,7 @@ use App\Http\Livewire\DataTable\WithCachedRows;
 use App\Http\Livewire\DataTable\WithPerPagePagination;
 use App\Http\Livewire\DataTable\WithSorting;
 use App\Models\User;
+use Illuminate\Support\Carbon;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -42,7 +43,7 @@ class UsersDatatable extends Component
     {
         return [
             'editing.name' => 'required|min:3',
-            'editing.email' => 'required|max:255|unique:users,email',
+            'editing.email' => 'required|max:255|unique:users,email,'. $this->editing->id,
             'avatar' => 'nullable|image|max:1000',
         ];
     }
@@ -145,7 +146,9 @@ class UsersDatatable extends Component
     public function getRowsQueryProperty()
     {
         $query = User::query()
-            ->when($this->filters['search'], fn($query, $search) => $query->where('name', 'like', '%'.$search.'%'));
+            ->search($this->filters['search'])
+            ->when($this->filters['date-min'], fn($query, $date) => $query->where('created_at', '>=', Carbon::parse($date)))
+            ->when($this->filters['date-max'], fn($query, $date) => $query->where('created_at', '<=', Carbon::parse($date)));
 
         return $this->applySorting($query);
     }

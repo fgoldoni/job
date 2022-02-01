@@ -237,7 +237,7 @@
                             <x-jet.dropdown align="right" width="w-60">
                                 <x-slot name="trigger">
                                     <button type="button" class="max-w-xs bg-white rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 lg:p-2 lg:rounded-md lg:hover:bg-gray-50" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                        <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                                        <img class="h-8 w-8 rounded-full" src="{{ Auth::user()->avatar_url }}" alt="">
                                         <span class="hidden ml-3 text-gray-700 text-sm font-medium lg:block"><span class="sr-only">Open user menu for </span>{{ Auth::user()->name }}</span>
                                         <!-- Heroicon name: solid/chevron-down -->
                                         <svg class="hidden flex-shrink-0 ml-1 h-5 w-5 text-gray-400 lg:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -253,7 +253,7 @@
                                             Signed in as
                                         </p>
                                         <p class="text-sm font-medium text-gray-900 truncate" role="none">
-                                            tom@example.com
+                                            {{ Auth::user()->email }}
                                         </p>
                                     </div>
 
