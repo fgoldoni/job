@@ -3,5 +3,6 @@
     "Jobs": true,
     "Roles": true,
     "Companies": true,
-    "User": true
+    "User": true,
+    "Settings": true
 }

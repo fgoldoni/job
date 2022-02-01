@@ -22,6 +22,6 @@
                                   </span>
     </button>
     @if (!$isActive)
-        <x-button.link class="m-2 text-sm flex-none">Re-send link</x-button.link>
+        <x-button.link class="m-2 text-sm flex-none" wire:click="resendEmailVerificationNotification">Re-send link</x-button.link>
     @endif
 </div>

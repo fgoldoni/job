@@ -119,6 +119,15 @@ class UsersDatatable extends Component
         $this->showEditModal = true;
     }
 
+    public function impersonate(User $user)
+    {
+        $this->useCachedRows();
+
+        auth()->user()->impersonate($user);
+
+        return redirect(config('laravel-impersonate.take_redirect_to'));
+    }
+
     public function save()
     {
         $this->validate();

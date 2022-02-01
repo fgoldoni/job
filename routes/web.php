@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::impersonate();
+
 Route::view('/', 'welcome')->name('home');
 
 Route::middleware('guest')->group(function () {

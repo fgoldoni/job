@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Modules\Roles\Providers\RolesServiceProvider;
+use Modules\Settings\Providers\SettingsServiceProvider;
 use Modules\Users\Providers\UsersServiceProvider;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\Component;
@@ -19,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->register(UsersServiceProvider::class);
         $this->app->register(RolesServiceProvider::class);
+        $this->app->register(SettingsServiceProvider::class);
     }
 
     /**
