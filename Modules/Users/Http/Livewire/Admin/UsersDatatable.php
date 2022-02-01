@@ -7,6 +7,7 @@ use App\Http\Livewire\DataTable\WithCachedRows;
 use App\Http\Livewire\DataTable\WithPerPagePagination;
 use App\Http\Livewire\DataTable\WithSorting;
 use App\Models\User;
+use Illuminate\Validation\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -41,7 +42,7 @@ class UsersDatatable extends Component
     {
         return [
             'editing.name' => 'required|min:3',
-            'editing.email' => 'required',
+            'editing.email' => 'required|max:255|unique:users,email',
             'avatar' => 'nullable|image|max:1000',
         ];
     }
@@ -49,6 +50,12 @@ class UsersDatatable extends Component
     public function mount()
     {
         $this->editing = $this->makeBlankUser();
+    }
+
+    // Computed Property
+    public function getToggleProperty()
+    {
+        return !is_null($this->editing->email_verified_at);
     }
 
     public function updatedFilters()
