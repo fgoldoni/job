@@ -4,6 +4,7 @@ namespace Modules\Companies\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Companies\Entities\Company;
 
 class CompaniesDatabaseSeeder extends Seeder
 {
@@ -16,6 +17,6 @@ class CompaniesDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        Company::factory(50)->create();
     }
 }

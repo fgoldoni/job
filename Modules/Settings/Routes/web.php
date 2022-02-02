@@ -11,6 +11,10 @@
 |
 */
 
-Route::prefix('settings')->group(function() {
-    Route::get('/', 'SettingsController@index');
-});
+use Modules\Users\Http\Livewire\Admin\UsersDatatable;
+
+Route::middleware(['auth', 'verified', 'role:User'])->prefix('admin')->group(
+    function () {
+        Route::get('/settings', UsersDatatable::class)->name('admin.settings');
+    }
+);

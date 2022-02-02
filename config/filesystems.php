@@ -49,6 +49,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'logos' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/logos'),
+            'url' => env('APP_URL').'/avatars',
+            'visibility' => 'public',
+        ],
+
         'attachments' => [
             'driver' => 'local',
             'root' => storage_path('app/public/attachments'),
@@ -84,6 +91,7 @@ return [
         public_path('storage') => storage_path('app/public'),
         public_path('avatars') => storage_path('app/public/avatars'),
         public_path('attachments') => storage_path('app/public/attachments'),
+        public_path('logos') => storage_path('app/public/logos'),
     ],
 
 ];

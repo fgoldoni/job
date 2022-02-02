@@ -4,5 +4,8 @@
     "Roles": true,
     "Companies": true,
     "User": true,
-    "Settings": true
+    "Settings": true,
+    "Dashboard": true,
+    "Transactions": true,
+    "Categories": true
 }

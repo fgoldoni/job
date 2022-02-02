@@ -4,6 +4,7 @@ namespace Modules\Jobs\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Jobs\Entities\Job;
 
 class JobsDatabaseSeeder extends Seeder
 {
@@ -16,6 +17,6 @@ class JobsDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        Job::factory(50)->create();
     }
 }

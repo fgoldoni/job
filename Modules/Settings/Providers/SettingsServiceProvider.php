@@ -3,6 +3,7 @@
 namespace Modules\Settings\Providers;
 
 use Illuminate\Contracts\Cache\Factory;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Modules\Settings\Entities\Setting;
 
@@ -26,10 +27,12 @@ class SettingsServiceProvider extends ServiceProvider
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
 
-        $setting = $cache->remember('settings', 60, function () use ($setting) {
-            return $setting->pluck('value', 'name')->all();
-        });
-        config()->set('setting', $setting);
+        if (Schema::hasTable('settings')) {
+            $setting = $cache->remember('settings', 60, function () use ($setting) {
+                return $setting->pluck('value', 'name')->all();
+            });
+            config()->set('setting', $setting);
+        }
     }
 
     /**

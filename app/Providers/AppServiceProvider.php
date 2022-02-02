@@ -3,6 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Modules\Categories\Providers\CategoriesServiceProvider;
+use Modules\Companies\Providers\CompaniesServiceProvider;
+use Modules\Dashboard\Providers\DashboardServiceProvider;
+use Modules\Jobs\Providers\JobsServiceProvider;
 use Modules\Roles\Providers\RolesServiceProvider;
 use Modules\Settings\Providers\SettingsServiceProvider;
 use Modules\Users\Providers\UsersServiceProvider;
@@ -21,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->register(UsersServiceProvider::class);
         $this->app->register(RolesServiceProvider::class);
         $this->app->register(SettingsServiceProvider::class);
+        $this->app->register(DashboardServiceProvider::class);
+        $this->app->register(CategoriesServiceProvider::class);
+        $this->app->register(CompaniesServiceProvider::class);
+        $this->app->register(JobsServiceProvider::class);
     }
 
     /**
