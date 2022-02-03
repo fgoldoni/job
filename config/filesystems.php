@@ -52,7 +52,7 @@ return [
         'logos' => [
             'driver' => 'local',
             'root' => storage_path('app/public/logos'),
-            'url' => env('APP_URL').'/avatars',
+            'url' => env('APP_URL').'/logos',
             'visibility' => 'public',
         ],
 

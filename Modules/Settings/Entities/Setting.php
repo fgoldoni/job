@@ -2,6 +2,8 @@
 
 namespace Modules\Settings\Entities;
 
+use App\Http\Traits\HasLogo;
+use Database\Factories\SettingFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -9,10 +11,12 @@ class Setting extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
-    
+    protected $guarded = [];
+
+    public $timestamps = false;
+
     protected static function newFactory()
     {
-        return \Modules\Settings\Database\factories\SettingFactory::new();
+        return SettingFactory::new();
     }
 }

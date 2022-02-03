@@ -7,5 +7,6 @@
     "Settings": true,
     "Dashboard": true,
     "Transactions": true,
-    "Categories": true
+    "Categories": true,
+    "Plans": true
 }

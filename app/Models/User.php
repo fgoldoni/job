@@ -8,13 +8,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Lab404\Impersonate\Models\Impersonate;
+use Laravel\Cashier\Billable;
 use Laravel\Sanctum\HasApiTokens;
 use Nicolaslopezj\Searchable\SearchableTrait;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles, HasAvatar, SearchableTrait, Impersonate;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, HasAvatar, SearchableTrait, Impersonate, Billable;
 
     /**
      * The attributes that are mass assignable.

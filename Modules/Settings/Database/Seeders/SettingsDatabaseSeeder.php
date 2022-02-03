@@ -17,10 +17,11 @@ class SettingsDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $setting = new Setting();
-        $setting->name = 'color';
-        $setting->value = 'indigo';
-
-        $setting->save();
+        Setting::factory()->create(['name' => 'logo', 'value' => 'logo']);
+        Setting::factory()->create(['name' => 'favicon', 'value' => 'favicon']);
+        Setting::factory()->create(['name' => 'title', 'value' => 'title']);
+        Setting::factory()->create(['name' => 'description', 'value' => 'description']);
+        Setting::factory()->create(['name' => 'phone', 'value' => 'phone']);
+        Setting::factory()->create(['name' => 'email', 'value' => 'email']);
     }
 }

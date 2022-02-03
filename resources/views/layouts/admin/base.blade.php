@@ -4,14 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @hasSection('title')
-
-            <title>@yield('title') - {{ config('app.name') }}</title>
+            <title>@yield('title') - {{ config('setting.title') }}</title>
         @else
-            <title>{{ config('app.name') }}</title>
+            <title>{{ config('setting.title') }}</title>
         @endif
 
         <!-- Favicon -->
-		<link rel="shortcut icon" href="{{ url(asset('favicon.ico')) }}">
+		<link rel="shortcut icon" href="{{ Storage::disk('logos')->url(config('setting.favicon')) }}">
 
         <!-- Fonts -->
         <link href="https://fonts.cdnfonts.com/css/operator-mono" rel="stylesheet">

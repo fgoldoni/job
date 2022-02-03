@@ -11,6 +11,7 @@
         "khsing/world": "^8.1",
         "lab404/laravel-impersonate": "^1.7",
         "laravel-frontend-presets/tall": "^4.0",
+        "laravel/cashier": "^13.8",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
