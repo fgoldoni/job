@@ -2,10 +2,7 @@
 
 namespace Modules\Settings\Http\Livewire\Admin\Settings;
 
-use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
-use Livewire\Component;
-use Modules\Settings\Entities\Setting;
 use Modules\Settings\Http\Livewire\Admin\Settings;
 
 class Mail extends Settings
@@ -38,14 +35,7 @@ class Mail extends Settings
 
     public $postmark_token;
 
-
-
     protected $listeners = ['changeMailDriver'];
-
-    public function changeMailDriver($value)
-    {
-        $this->mail_driver = $value;
-    }
 
     public function mount()
     {
@@ -74,9 +64,9 @@ class Mail extends Settings
         $this->sendmail_path = config('setting.sendmail_path');
     }
 
-    public function updated($proprety, $value)
+    public function changeMailDriver($value)
     {
-        $this->{$proprety} = is_string($value) && ($value === '' || $value === 'null') ? null : $value;
+        $this->mail_driver = $value;
     }
 
     public function saveMail()
@@ -91,14 +81,14 @@ class Mail extends Settings
         $this->updateField('mail_name', $this->mail_name);
         $this->updateField('mail_reply_to', $this->mail_reply_to);
 
-        cache()->forget('settings');
+        $this->forget('settings');
 
         $this->notify('The Mail configuration has been successfully saved');
     }
 
     public function saveMailgun()
     {
-        $data = $this->validate([
+        $this->validate([
             'mail_driver' => ['required', 'min:4', Rule::in(['mailgun'])],
             'mailgun_domain' => 'required|min:3',
             'mailgun_secret' => 'required|min:3',
@@ -110,7 +100,7 @@ class Mail extends Settings
         $this->updateField('mailgun_secret', $this->mailgun_secret);
         $this->updateField('mailgun_endpoint', $this->mailgun_endpoint);
 
-        cache()->forget('settings');
+        $this->forget('settings');
 
         $this->notify('The MAILGUN configuration has been successfully saved');
     }
@@ -125,7 +115,7 @@ class Mail extends Settings
         $this->updateField('mail_driver', $this->mail_driver);
         $this->updateField('sendmail_path', $this->sendmail_path);
 
-        cache()->forget('settings');
+        $this->forget('settings');
 
         $this->notify('The SENDMAIL configuration has been successfully saved');
     }
@@ -138,14 +128,14 @@ class Mail extends Settings
 
         $this->updateField('mail_driver', $this->mail_driver);
 
-        cache()->forget('settings');
+        $this->forget('settings');
 
         $this->notify('The LOG configuration has been successfully saved');
     }
 
     public function saveSes()
     {
-        $data = $this->validate([
+        $this->validate([
             'mail_driver' => ['required', 'min:3', Rule::in(['ses'])],
             'ses_key' => 'required|min:3',
             'ses_secret' => 'required|min:3',
@@ -157,7 +147,7 @@ class Mail extends Settings
         $this->updateField('ses_secret', $this->ses_secret);
         $this->updateField('ses_region', $this->ses_region);
 
-        cache()->forget('settings');
+        $this->forget('settings');
 
         $this->notify('The SES configuration has been successfully saved');
     }
@@ -172,7 +162,7 @@ class Mail extends Settings
         $this->updateField('mail_driver', $this->mail_driver);
         $this->updateField('postmark_token', $this->postmark_token);
 
-        cache()->forget('settings');
+        $this->forget('settings');
 
         $this->notify('The POSTMARK configuration has been successfully saved');
     }
@@ -195,7 +185,7 @@ class Mail extends Settings
         $this->updateField('mail_username', $this->mail_username);
         $this->updateField('mail_password', $this->mail_password);
 
-        cache()->forget('settings');
+        $this->forget('settings');
 
         $this->notify('The SMTP configuration has been successfully saved');
     }

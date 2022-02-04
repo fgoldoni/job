@@ -3,17 +3,15 @@
 namespace Modules\Settings\Http\Livewire\Admin\Settings;
 
 use App\Http\Livewire\DataTable\WithCachedRows;
-use http\Encoding\Stream;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Modules\Settings\Entities\Setting;
+use Modules\Settings\Http\Livewire\Admin\Settings;
 
-class Site extends Component
+class Site extends Settings
 {
-    use WithCachedRows;
-
     use WithFileUploads;
 
     public $logo;
@@ -26,19 +24,17 @@ class Site extends Component
 
     public $description;
 
-    public Setting $editing;
-
-    protected $listeners = ['changeColor'];
-
     public function rules()
     {
         return [
-            'title' => 'required|min:3',
-            'description' => 'required|min:3',
             'logo' => 'nullable|image|max:1000',
             'favicon' => 'nullable|max:1000',
+            'title' => 'required|min:4',
+            'description' => 'required|min:4',
         ];
     }
+
+    protected $listeners = ['changeColor'];
 
     public function mount()
     {
@@ -67,65 +63,15 @@ class Site extends Component
 
         $this->favicon && $this->updateFile('favicon', $this->favicon);
 
-        cache()->forget('settings');
+        $this->forget('settings');
 
-        $this->notify('Success update');
+        $this->notify('The Site configuration has been successfully saved');
     }
 
-    public function getRowsQueryProperty()
-    {
-        return Setting::get(['id', 'name', 'value']);
-    }
-
-    public function getRowsProperty()
-    {
-        return $this->cache(
-            function () {
-                return $this->rowsQuery;
-            }
-        );
-    }
-
-    public function logo()
-    {
-        return config('setting.logo')
-            ? Storage::disk('logos')->url(config('setting.logo'))
-            : $this->defaultAvatarUrl();
-    }
-
-    public function favicon()
-    {
-        return config('setting.favicon')
-            ? Storage::disk('logos')->url(config('setting.favicon'))
-            : $this->defaultAvatarUrl();
-    }
-
-
-    private function updateFile(string $name, UploadedFile $photo)
-    {
-        tap(config("setting.$name"), function ($previous) use ($name, $photo) {
-            Setting::updateOrCreate(
-                ['name' => $name],
-                ['value' => $photo->store('/', 'logos')]
-            );
-
-            if ($previous) {
-                Storage::disk('logos')->delete($previous);
-            }
-        });
-    }
-
-    private function updateField(string $field, $value)
-    {
-        Setting::updateOrCreate(
-            ['name' => $field],
-            ['value' => $value]
-        );
-    }
 
     public function render()
     {
-        return view('settings::livewire.admin.settings.site', ['items' => $this->rows])
+        return view('settings::livewire.admin.settings.site')
             ->layout('layouts.admin.app', ['title' => 'Site Setting']);
     }
 }

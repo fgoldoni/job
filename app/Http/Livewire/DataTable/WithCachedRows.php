@@ -25,4 +25,9 @@ trait WithCachedRows
 
         return $result;
     }
+
+    public function forget($key)
+    {
+        cache()->forget($key);
+    }
 }

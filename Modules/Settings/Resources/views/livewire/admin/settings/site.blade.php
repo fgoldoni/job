@@ -23,14 +23,14 @@
                 <div class="w-full bg-white rounded-lg mx-auto mt-8 flex overflow-hidden rounded-b-none">
                     <div class="w-1/3 bg-gray-50 p-8 hidden lg:inline-block">
                         <h2 class="font-medium text-md text-gray-700 mb-4 tracking-wide">Site Setting</h2>
-                        <p class="text-xs text-gray-500">Update your site setting information such as Logo, Favicon, and Title.</p>
+                        <p class="text-xs text-gray-500">Update your site settings information, such as logo, favicon and title.</p>
                     </div>
                     <div class="lg:w-2/3 w-full">
                         <div class="shadow sm:rounded-md sm:overflow-hidden">
                             <div class="bg-white py-6 px-4 sm:p-6">
                                 <div>
                                     <h2 id="payment-details-heading" class="text-lg leading-6 font-medium text-gray-900">Site Setting</h2>
-                                    <p class="mt-1 text-sm text-gray-500">Update your site setting information such as Logo, Favicon, and Title.</p>
+                                    <p class="mt-1 text-sm text-gray-500">Update your site settings information, such as logo, favicon and title.</p>
                                 </div>
                                 <x-input.group label="Logo" for="logo" :error="$errors->first('logo')">
                                     <x-input.file-upload wire:model="logo" id="logo">
@@ -83,10 +83,13 @@
                 </div>
                 <div class="px-4 py-3 bg-gray-300 sm:px-6 items-center flex justify-between mb-8">
                     <div class="flex-1 text-xs text-gray-500 tracking-tight">
-                        Click on Save to update your Profile Info
+                        Click on Save to update your Site configuration
                     </div>
                     <div class="flex-1 text-right">
                         <x-jet.button type="submit" wire:loading.attr="disabled">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 -ml-1 animate-spin mr-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" wire:loading.delay.longer>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
                             {{ __('Save') }}
                         </x-jet.button>
                     </div>

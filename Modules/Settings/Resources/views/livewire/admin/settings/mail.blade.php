@@ -23,14 +23,14 @@
                 <div class="w-full bg-white rounded-lg mx-auto mt-8 flex overflow-hidden rounded-b-none">
                     <div class="w-1/3 bg-gray-50 p-8 hidden lg:inline-block">
                         <h2 class="font-medium text-md text-gray-700 mb-4 tracking-wide">Mail Setting</h2>
-                        <p class="text-xs text-gray-500">Update your site setting information such as Logo, Favicon, and Title.</p>
+                        <p class="text-xs text-gray-500">Update your site settings information, such as sending and receiving emails and name.</p>
                     </div>
                     <div class="lg:w-2/3 w-full">
                         <div class="shadow sm:rounded-md sm:overflow-hidden">
                             <div class="bg-white py-6 px-4 sm:p-6">
                                 <div>
                                     <h2 id="payment-details-heading" class="text-lg leading-6 font-medium text-gray-900">Mail Setting</h2>
-                                    <p class="mt-1 text-sm text-gray-500">Update your site setting information such as Logo, Favicon, and Title.</p>
+                                    <p class="mt-1 text-sm text-gray-500">Update your site settings information, such as sending and receiving emails and name.</p>
                                 </div>
 
                                 <x-input.group for="mail_from" label="Mail From" :error="$errors->first('mail_from')">
@@ -50,7 +50,7 @@
                 </div>
                 <div class="px-4 py-3 bg-gray-300 sm:px-6 items-center flex justify-between mb-8">
                     <div class="flex-1 text-xs text-gray-500 tracking-tight">
-                        Click on Save to update your Profile Info
+                        Click on Save to update your Mail configuration
                     </div>
                     <div class="flex-1 text-right">
                         <x-jet.button type="submit" wire:loading.attr="disabled">
