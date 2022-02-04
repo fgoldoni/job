@@ -1,4 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors')
+
 
 module.exports = {
     theme: {
@@ -6,6 +8,35 @@ module.exports = {
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
             },
+        },
+        colors: {
+            transparent: 'transparent',
+            current: 'currentColor',
+            black: colors.black,
+            white: colors.white,
+            gray: colors.gray,
+            emerald: colors.emerald,
+            indigo: colors.indigo,
+            yellow: colors.yellow,
+            cyan: colors.cyan,
+            teal: colors.teal,
+            sky: colors.sky,
+            green: colors.green,
+            pink: colors.pink,
+            purple: colors.purple,
+            blue: colors.blue,
+            violet: colors.violet,
+            red: colors.red,
+            yellow: colors.yellow,
+            slate: colors.slate,
+            zinc: colors.zinc,
+            neutral: colors.neutral,
+            stone: colors.stone,
+            orange: colors.orange,
+            amber: colors.amber,
+            lime: colors.lime,
+            fuchsia: colors.fuchsia,
+            rose: colors.rose,
         },
     },
     variants: {

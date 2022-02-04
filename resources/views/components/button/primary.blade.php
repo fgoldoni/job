@@ -8,4 +8,4 @@
 -- Purchase here: https://tailwindui.com/
 --}}
 
-<x-button {{ $attributes->merge(['class' => 'text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 border-indigo-600 disabled:opacity-25 transition']) }}>{{ $slot }}</x-button>
+<x-button {{ $attributes->merge(['class' => 'text-white bg-' . config('setting.color') . '-600 hover:bg-' . config('setting.color') . '-500 active:bg-' . config('setting.color') . '-700 border-' . config('setting.color') . '-600 disabled:opacity-25 transition']) }}>{{ $slot }}</x-button>
