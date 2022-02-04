@@ -44,6 +44,12 @@ class MailConfigServiceProvider extends ServiceProvider
         config()->set('services.ses.key', config('setting.ses_key'));
         config()->set('services.ses.secret', config('setting.ses_secret'));
         config()->set('services.ses.region', config('setting.ses_region'));
+
+        config()->set('mail.from.address', config('setting.mail_from'));
+        config()->set('mail.from.name', config('setting.mail_name'));
+
+        config()->set('mail.reply_to.address', config('setting.mail_reply_to'));
+        config()->set('mail.reply_to.name', config('setting.mail_name'));
     }
     /**
      * Register the service provider.

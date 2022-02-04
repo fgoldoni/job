@@ -55,8 +55,10 @@ class Mail extends Settings
         $this->mail_encryption = config('setting.mail_encryption');
         $this->mail_username = config('setting.mail_username');
         $this->mail_password = config('setting.mail_password');
+
         $this->mail_from = config('setting.mail_from');
         $this->mail_name = config('setting.mail_name');
+        $this->mail_reply_to = config('setting.mail_reply_to');
 
 
         $this->mailgun_domain = config('setting.mailgun_domain');
@@ -75,6 +77,23 @@ class Mail extends Settings
     public function updated($proprety, $value)
     {
         $this->{$proprety} = is_string($value) && ($value === '' || $value === 'null') ? null : $value;
+    }
+
+    public function saveMail()
+    {
+        $this->validate([
+            'mail_from' => 'required|email|min:3',
+            'mail_name' => 'required|min:3',
+            'mail_reply_to' => 'required|email|min:3',
+        ]);
+
+        $this->updateField('mail_from', $this->mail_from);
+        $this->updateField('mail_name', $this->mail_name);
+        $this->updateField('mail_reply_to', $this->mail_reply_to);
+
+        cache()->forget('settings');
+
+        $this->notify('The Mail configuration has been successfully saved');
     }
 
     public function saveMailgun()

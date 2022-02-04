@@ -31,8 +31,11 @@ class SettingsDatabaseSeeder extends Seeder
         Setting::factory()->create(['name' => 'mail_encryption', 'value' => null]);
         Setting::factory()->create(['name' => 'mail_username', 'value' => null]);
         Setting::factory()->create(['name' => 'mail_password', 'value' => null]);
-        Setting::factory()->create(['name' => 'mail_from', 'value' => null]);
+
+
+        Setting::factory()->create(['name' => 'mail_from', 'value' => 'service@jobhunt.com']);
         Setting::factory()->create(['name' => 'mail_name', 'value' => 'Job Hunt']);
+        Setting::factory()->create(['name' => 'mail_reply_to', 'value' => 'reply@jobhunt.com']);
 
         Setting::factory()->create(['name' => 'sendmail_path', 'value' => '/usr/sbin/sendmail -t -i']);
         Setting::factory()->create(['name' => 'log_channel', 'value' => null]);

@@ -2,14 +2,14 @@
     <section aria-labelledby="payment-details-heading">
         <div class="w-full bg-white rounded-lg mx-auto mt-8 flex overflow-hidden rounded-b-none">
             <div class="w-1/3 bg-gray-50 p-8 hidden lg:inline-block">
-                <h2 class="font-medium text-md text-gray-700 mb-4 tracking-wide">Mail Setting</h2>
+                <h2 class="font-medium text-md text-gray-700 mb-4 tracking-wide">LOG Setting</h2>
                 <p class="text-xs text-gray-500">Update your site setting information such as Logo, Favicon, and Title.</p>
             </div>
             <div class="lg:w-2/3 w-full">
                 <div class="shadow sm:rounded-md sm:overflow-hidden">
                     <div class="bg-white py-6 px-4 sm:p-6">
                         <div>
-                            <h2 id="payment-details-heading" class="text-lg leading-6 font-medium text-gray-900">Mail Setting</h2>
+                            <h2 id="payment-details-heading" class="text-lg leading-6 font-medium text-gray-900">LOG Setting</h2>
                             <p class="mt-1 text-sm text-gray-500">Update your site setting information such as Logo, Favicon, and Title.</p>
                         </div>
 
@@ -24,9 +24,7 @@
                                 <div class="ml-3">
                                     <h3 class="text-sm font-medium text-yellow-800">Attention needed</h3>
                                     <div class="mt-2 text-sm text-yellow-700">
-                                        <p>If you are not using the United States Mailgun region, you may define your region's endpoint in the services configuration file:
-                                            <span class="font-medium">api.eu.mailgun.net</span>
-                                        </p>
+                                        <p>please save to change driver</p>
                                     </div>
                                 </div>
                             </div>
