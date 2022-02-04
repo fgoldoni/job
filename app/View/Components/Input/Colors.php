@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\Layouts\Admin;
+namespace App\View\Components\Input;
 
 use Illuminate\View\Component;
 
-class App extends Component
+class Colors extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class App extends Component
      */
     public function render()
     {
-        return view('components.layouts.admin.app');
+        return view('components.input.colors');
     }
 }

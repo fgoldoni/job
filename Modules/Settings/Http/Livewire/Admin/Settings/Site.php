@@ -28,13 +28,15 @@ class Site extends Component
 
     public Setting $editing;
 
+    protected $listeners = ['changeColor'];
+
     public function rules()
     {
         return [
             'title' => 'required|min:3',
             'description' => 'required|min:3',
             'logo' => 'nullable|image|max:1000',
-            'favicon' => 'nullable|image|max:1000',
+            'favicon' => 'nullable|max:1000',
         ];
     }
 
@@ -46,16 +48,16 @@ class Site extends Component
         $this->editing = new Setting();
     }
 
+    public function changeColor($value)
+    {
+        $this->color = $value;
+    }
+
     public function save()
     {
         $this->validate();
 
-        Setting::updateOrCreate(
-            ['name' => 'title'],
-            ['value' => $this->title]
-        );
-
-
+        $this->updateField('title', $this->title);
 
         $this->updateField('description', $this->description);
 
@@ -68,12 +70,11 @@ class Site extends Component
         cache()->forget('settings');
 
         $this->notify('Success update');
-        $this->emit('saved');
     }
 
     public function getRowsQueryProperty()
     {
-        return Setting::get(['id','name','value']);
+        return Setting::get(['id', 'name', 'value']);
     }
 
     public function getRowsProperty()
@@ -100,11 +101,6 @@ class Site extends Component
     }
 
 
-    public function render()
-    {
-        return view('settings::livewire.admin.settings.site', [ 'items' => $this->rows ])->extends('layouts.admin.app');
-    }
-
     private function updateFile(string $name, UploadedFile $photo)
     {
         tap(config("setting.$name"), function ($previous) use ($name, $photo) {
@@ -125,5 +121,11 @@ class Site extends Component
             ['name' => $field],
             ['value' => $value]
         );
+    }
+
+    public function render()
+    {
+        return view('settings::livewire.admin.settings.site', ['items' => $this->rows])
+            ->layout('layouts.admin.app', ['title' => 'Site Setting']);
     }
 }

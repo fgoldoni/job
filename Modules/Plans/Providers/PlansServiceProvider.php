@@ -47,9 +47,11 @@ class PlansServiceProvider extends ServiceProvider
      */
     protected function registerConfig()
     {
-        $this->publishes([
+        $this->publishes(
+            [
             module_path($this->moduleName, 'Config/config.php') => config_path($this->moduleNameLower . '.php'),
-        ], 'config');
+            ], 'config'
+        );
         $this->mergeConfigFrom(
             module_path($this->moduleName, 'Config/config.php'), $this->moduleNameLower
         );
@@ -66,9 +68,11 @@ class PlansServiceProvider extends ServiceProvider
 
         $sourcePath = module_path($this->moduleName, 'Resources/views');
 
-        $this->publishes([
+        $this->publishes(
+            [
             $sourcePath => $viewPath
-        ], ['views', $this->moduleNameLower . '-module-views']);
+            ], ['views', $this->moduleNameLower . '-module-views']
+        );
 
         $this->loadViewsFrom(array_merge($this->getPublishableViewPaths(), [$sourcePath]), $this->moduleNameLower);
     }

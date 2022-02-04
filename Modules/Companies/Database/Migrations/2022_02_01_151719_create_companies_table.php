@@ -14,29 +14,33 @@ class CreateCompaniesTable extends Migration
      */
     public function up()
     {
-        Schema::create('companies', function (Blueprint $table) {
-            $table->increments('id', true);
+        Schema::create(
+            'companies', function (Blueprint $table) {
+                $table->increments('id', true);
 
-            $table->string('name');
-            $table->longText('content')->nullable();
-            $table->string('email')->unique()->nullable();
-            $table->string('phone')->nullable();
-            $table->boolean('online')->default(false);
-            $table->integer('user_id')->unsigned()->index();
-            $table->unsignedBigInteger('world_country_id')->unsigned()->index();
+                $table->string('name');
+                $table->longText('content')->nullable();
+                $table->string('email')->unique()->nullable();
+                $table->string('phone')->nullable();
+                $table->boolean('online')->default(false);
+                $table->integer('user_id')->unsigned()->index();
+                $table->unsignedBigInteger('world_country_id')->unsigned()->index();
 
-            $table->string('logo')->nullable();
-            $table->string('thumbnail')->nullable();
+                $table->string('logo')->nullable();
+                $table->string('thumbnail')->nullable();
 
 
-            $table->softDeletes();
-            $table->timestamps();
-        });
+                $table->softDeletes();
+                $table->timestamps();
+            }
+        );
 
-        Schema::table('companies', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('world_country_id')->references('id')->on('world_countries')->onDelete('cascade');
-        });
+        Schema::table(
+            'companies', function (Blueprint $table) {
+                $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+                $table->foreign('world_country_id')->references('id')->on('world_countries')->onDelete('cascade');
+            }
+        );
     }
 
     /**

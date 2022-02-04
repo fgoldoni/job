@@ -338,3 +338,9 @@
     </div>
 
 @endsection
+
+@section('title')
+    @isset($title)
+        {{ $title }}
+    @endisset
+@endsection

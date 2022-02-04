@@ -28,9 +28,10 @@ class SettingsServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
 
         if (Schema::hasTable('settings')) {
-            $setting = $cache->remember('settings', 60, function () use ($setting) {
-                return $setting->pluck('value', 'name')->all();
+            $setting = $cache->rememberForever('settings', function () use ($setting) {
+                    return $setting->pluck('value', 'name')->all();
             });
+
             config()->set('setting', $setting);
         }
     }
@@ -43,6 +44,7 @@ class SettingsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(RouteServiceProvider::class);
+        $this->app->register(MailConfigServiceProvider::class);
     }
 
     /**
@@ -52,9 +54,11 @@ class SettingsServiceProvider extends ServiceProvider
      */
     protected function registerConfig()
     {
-        $this->publishes([
+        $this->publishes(
+            [
             module_path($this->moduleName, 'Config/config.php') => config_path($this->moduleNameLower . '.php'),
-        ], 'config');
+            ], 'config'
+        );
         $this->mergeConfigFrom(
             module_path($this->moduleName, 'Config/config.php'), $this->moduleNameLower
         );
@@ -71,9 +75,11 @@ class SettingsServiceProvider extends ServiceProvider
 
         $sourcePath = module_path($this->moduleName, 'Resources/views');
 
-        $this->publishes([
+        $this->publishes(
+            [
             $sourcePath => $viewPath
-        ], ['views', $this->moduleNameLower . '-module-views']);
+            ], ['views', $this->moduleNameLower . '-module-views']
+        );
 
         $this->loadViewsFrom(array_merge($this->getPublishableViewPaths(), [$sourcePath]), $this->moduleNameLower);
     }

@@ -12,14 +12,16 @@
 */
 
 
-use Modules\Settings\Http\Livewire\Admin\Settings;
+use Modules\Settings\Http\Livewire\Admin\Settings\Mail;
 use Modules\Settings\Http\Livewire\Admin\Settings\Site;
 
-Route::middleware(['auth', 'verified', 'role:User'])->prefix('admin')->group(function () {
+Route::middleware(['auth', 'verified', 'role:User'])->prefix('admin')->group(
+    function () {
         Route::redirect('/admin/settings', '/admin/settings/site')->name('admin.settings');
         Route::get('/settings/site', Site::class)->name('admin.settings.site');
-        Route::get('/settings/email', Site::class)->name('admin.settings.email');
+        Route::get('/settings/email', Mail::class)->name('admin.settings.email');
         Route::get('/settings/payment', Site::class)->name('admin.settings.payment');
         Route::get('/settings/mailchimp', Site::class)->name('admin.settings.mailchimp');
         Route::get('/settings/analytics', Site::class)->name('admin.settings.analytics');
-});
+    }
+);

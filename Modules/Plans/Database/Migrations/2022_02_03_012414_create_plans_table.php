@@ -13,11 +13,13 @@ class CreatePlansTable extends Migration
      */
     public function up()
     {
-        Schema::create('plans', function (Blueprint $table) {
-            $table->id();
+        Schema::create(
+            'plans', function (Blueprint $table) {
+                $table->id();
 
-            $table->timestamps();
-        });
+                $table->timestamps();
+            }
+        );
     }
 
     /**

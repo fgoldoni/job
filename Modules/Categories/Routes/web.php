@@ -11,6 +11,8 @@
 |
 */
 
-Route::prefix('categories')->group(function() {
-    Route::get('/', 'CategoriesController@index');
-});
+Route::prefix('categories')->group(
+    function () {
+        Route::get('/', 'CategoriesController@index');
+    }
+);

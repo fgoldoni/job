@@ -17,64 +17,94 @@ class CategoriesDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        Category::create([
+        Category::create(
+            [
             'name'     => 'Car & Traffic'
-        ]);
+            ]
+        );
 
-        Category::create([
+        Category::create(
+            [
             'name'     => 'Building & Renovation'
-        ]);
+            ]
+        );
 
-        Category::create([
+        Category::create(
+            [
             'name'     => 'Education & Science'
-        ]);
+            ]
+        );
 
-        Category::create([
+        Category::create(
+            [
             'name'     => 'Computers & Electronics'
-        ]);
+            ]
+        );
 
-        Category::create([
+        Category::create(
+            [
             'name'     => 'Authorities & Associations'
-        ]);
+            ]
+        );
 
-        Category::create([
+        Category::create(
+            [
             'name'     => 'Services'
-        ]);
+            ]
+        );
 
-        Category::create([
+        Category::create(
+            [
             'name'     => 'Shopping & Ordering'
-        ]);
+            ]
+        );
 
-        Category::create([
+        Category::create(
+            [
             'name'     => 'Hotels & Gastronomie'
-        ]);
+            ]
+        );
 
-        Category::create([
+        Category::create(
+            [
             'name'     => 'Travel'
-        ]);
+            ]
+        );
 
-        Category::create([
+        Category::create(
+            [
             'name'     => 'Law'
-        ]);
+            ]
+        );
 
-        Category::create([
+        Category::create(
+            [
             'name'     => 'Health & Wellness'
-        ]);
+            ]
+        );
 
-        Category::create([
+        Category::create(
+            [
             'name'     => 'Nature & Environment'
-        ]);
+            ]
+        );
 
-        Category::create([
+        Category::create(
+            [
             'name'     => 'Advertising & Media'
-        ]);
+            ]
+        );
 
-        Category::create([
+        Category::create(
+            [
             'name'     => 'Living & Furnishing'
-        ]);
+            ]
+        );
 
-        Category::create([
+        Category::create(
+            [
             'name'     => 'Living & Furnishing'
-        ]);
+            ]
+        );
     }
 }

@@ -66,8 +66,9 @@
                                              </span>
                                     </x-input.file-upload>
                                 </x-input.group>
-                                <x-input.group for="color" label="Color" :error="$errors->first('color')">
-                                    <x-input.text wire:model="color" id="color" placeholder="Color" />
+
+                                <x-input.group for="color" label="Primary Color" :error="$errors->first('color')">
+                                    @livewire('input.colors', ['color' => $color])
                                 </x-input.group>
 
                                 <x-input.group for="title" label="Title" :error="$errors->first('title')">

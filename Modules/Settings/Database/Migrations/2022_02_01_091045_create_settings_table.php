@@ -13,13 +13,15 @@ class CreateSettingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('settings', function (Blueprint $table) {
-            $table->smallIncrements('id');
-            $table->string('name')->unique();
-            $table->text('value');
+        Schema::create(
+            'settings', function (Blueprint $table) {
+                $table->smallIncrements('id');
+                $table->string('name')->unique();
+                $table->text('value')->nullable();
 
-            $table->softDeletes();
-        });
+                $table->softDeletes();
+            }
+        );
     }
 
     /**
