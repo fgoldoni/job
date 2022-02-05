@@ -2,10 +2,6 @@
 
 namespace Modules\Settings\Http\Livewire\Admin\Settings;
 
-use App\Http\Livewire\DataTable\WithCachedRows;
-use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Storage;
-use Livewire\Component;
 use Livewire\WithFileUploads;
 use Modules\Settings\Entities\Setting;
 use Modules\Settings\Http\Livewire\Admin\Settings;
@@ -66,6 +62,8 @@ class Site extends Settings
         $this->forget('settings');
 
         $this->notify('The Site configuration has been successfully saved');
+
+        $this->emit('saved');
     }
 
 

@@ -18,3 +18,7 @@ Route::middleware(['auth', 'verified', 'role:User'])->prefix('admin')->group(
         Route::get('/companies', CompaniesDatatable::class)->name('admin.companies');
     }
 );
+
+Route::prefix('companies')->group(function () {
+    Route::get('/', [\Modules\Companies\Http\Controllers\CompaniesController::class, 'index'])->name('companies');
+});

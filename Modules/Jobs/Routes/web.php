@@ -13,9 +13,11 @@
 
 use Modules\Users\Http\Livewire\Admin\UsersDatatable;
 
-Route::middleware(['auth', 'verified', 'role:User'])->prefix('admin')->group(
-    function () {
+Route::middleware(['auth', 'verified', 'role:User'])->prefix('admin')->group(function () {
         Route::get('/jobs', UsersDatatable::class)->name('admin.jobs');
-    }
-);
+});
 
+
+Route::prefix('jobs')->group(function () {
+        Route::get('/', [\Modules\Jobs\Http\Controllers\JobsController::class, 'index'])->name('jobs');
+});
