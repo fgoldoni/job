@@ -4,8 +4,7 @@
     <div class="min-h-full">
         <x-navigation-menu></x-navigation-menu>
 
-        <div class="py-10">
-
+        <div>
             @hasSection('header')
                 <header>
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,7 +14,7 @@
             @endif
 
             <main>
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="mx-auto">
                     <!-- Replace with your content -->
                     @yield('content')
 
