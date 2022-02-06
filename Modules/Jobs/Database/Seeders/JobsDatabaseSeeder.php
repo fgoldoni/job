@@ -17,6 +17,9 @@ class JobsDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        Job::factory(50)->create();
+        for ($i=0; $i <= 50; $i++) {
+            $job = Job::factory()->create();
+            $job->attachCategories(rand(2, 10));
+        }
     }
 }

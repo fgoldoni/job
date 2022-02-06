@@ -146,7 +146,9 @@ class CategoriesDatatable extends Component
 
     public function getRowsQueryProperty()
     {
-        $query = Category::query()
+        $query = Category::search($this->filters['search'])
+            ->published()
+            ->childrenFor('area')
             ->when($this->filters['date-min'], fn($query, $date) => $query->where('created_at', '>=', Carbon::parse($date)))
             ->when($this->filters['date-max'], fn($query, $date) => $query->where('created_at', '<=', Carbon::parse($date)))
             ->with(['user']);

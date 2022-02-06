@@ -4,6 +4,7 @@ namespace App\View\Components\Home;
 
 use Illuminate\View\Component;
 use Modules\Categories\Entities\Category;
+use Modules\Jobs\Entities\Job;
 
 class PopularCategories extends Component
 {
@@ -29,6 +30,8 @@ class PopularCategories extends Component
      */
     public function render()
     {
-        return view('components.home.popular-categories', ['categories' => $this->category->limit(8)->get()]);
+        $area = $this->category->whereIsRoot()->where('slug', 'area')->first();
+
+        return view('components.home.popular-categories', ['categories' => $area->descendants()->limit(12)->get()]);
     }
 }

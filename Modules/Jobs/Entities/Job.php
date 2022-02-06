@@ -7,10 +7,11 @@ use Database\Factories\JobFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Companies\Entities\Company;
+use Rinvex\Categories\Traits\Categorizable;
 
 class Job extends Model
 {
-    use HasFactory;
+    use HasFactory, Categorizable;
 
     protected $guarded = [];
 
@@ -33,5 +34,10 @@ class Job extends Model
     public function company()
     {
         return $this->belongsTo(Company::class);
+    }
+
+    public function scopePublished($query)
+    {
+        return $query->where('online', true);
     }
 }

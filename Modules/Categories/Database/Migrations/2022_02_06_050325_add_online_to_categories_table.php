@@ -15,7 +15,7 @@ class AddOnlineToCategoriesTable extends Migration
     {
         if (Schema::hasTable('categories') && !Schema::hasColumn('categories', 'online')) {
             Schema::table('categories', function (Blueprint $table) {
-                $table->boolean('online')->after('description')->default(false);
+                $table->boolean('online')->after('description')->default(true);
             });
         }
     }

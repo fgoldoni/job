@@ -5,7 +5,7 @@
     <!-- Top Bar -->
     <x-toolbar>
         <x-slot name="search">
-            <x-toolbar.search wire:model="filters.search" placeholder="Search Items ..."></x-toolbar.search>
+            <x-input.text wire:model="filters.search" placeholder="Search Items ..."></x-input.text>
         </x-slot>
         <x-slot name="advancedSearch">
             <x-button.link wire:click="toggleShowFilters">@if ($showFilters) Hide @endif Advanced Search...</x-button.link>
@@ -207,6 +207,14 @@
 
                 <x-input.group for="description" label="Description" :error="$errors->first('editing.description')">
                     <x-input.textarea wire:model="editing.description" id="description" placeholder="Description" />
+                </x-input.group>
+
+                <x-input.group for="status" label="Status" :error="$errors->first('editing.status')">
+                    <x-input.select wire:model="editing.status" id="status">
+                        @foreach (App\Models\User::STATUSES as $value => $label)
+                            <option value="{{ $value }}">{{ $label }}</option>
+                        @endforeach
+                    </x-input.select>
                 </x-input.group>
             </x-slot>
 
