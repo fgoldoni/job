@@ -4,6 +4,7 @@ namespace Modules\Categories\Entities;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Modules\Jobs\Entities\Job;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Category extends \Rinvex\Categories\Models\Category
@@ -46,5 +47,13 @@ class Category extends \Rinvex\Categories\Models\Category
     public function scopePublished($query)
     {
         return $query->where('online', true);
+    }
+
+    /**
+     * Get all of the posts that are assigned this tag.
+     */
+    public function jobs()
+    {
+        return $this->morphedByMany(Job::class, 'categorizable', config('rinvex.categories.tables.categorizables'), 'category_id', 'categorizable_id', 'id', 'id');
     }
 }

@@ -32,6 +32,6 @@ class PopularCategories extends Component
     {
         $area = $this->category->whereIsRoot()->where('slug', 'area')->first();
 
-        return view('components.home.popular-categories', ['categories' => $area->descendants()->limit(12)->get()]);
+        return view('components.home.popular-categories', ['items' => $area->descendants()->with('jobs')->limit(12)->get()]);
     }
 }
