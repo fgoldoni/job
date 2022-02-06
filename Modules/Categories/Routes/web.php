@@ -11,8 +11,12 @@
 |
 */
 
-Route::prefix('categories')->group(
-    function () {
+use Modules\Categories\Http\Livewire\Admin\CategoriesDatatable;
+
+Route::middleware(['auth', 'verified', 'role:User'])->prefix('admin')->group(function () {
+    Route::get('/categories', CategoriesDatatable::class)->name('admin.categories');
+});
+
+Route::prefix('categories')->group(function () {
         Route::get('/', 'CategoriesController@index');
-    }
-);
+});

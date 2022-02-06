@@ -35,12 +35,10 @@ class CreateCompaniesTable extends Migration
             }
         );
 
-        Schema::table(
-            'companies', function (Blueprint $table) {
+        Schema::table('companies', function (Blueprint $table) {
                 $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
                 $table->foreign('world_country_id')->references('id')->on('world_countries')->onDelete('cascade');
-            }
-        );
+        });
     }
 
     /**

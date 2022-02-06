@@ -66,54 +66,8 @@
     </section>
 
     <!-- Section 3 -->
-    <section class="py-12 sm:py-16">
-        <div class="max-w-7xl px-10 mx-auto sm:text-center">
-            <h2 class="font-bold text-3xl sm:text-4xl lg:text-5xl mt-3">Popular Categories</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 my-12 sm:my-16">
-                <div class="cursor-pointer rounded-lg py-10 flex flex-col items-center justify-center shadow-md hover:shadow-2xl border border-gray-100 transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-110">
-                    <svg class="w-16 h-auto" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"><path d="M159.999 128.056a76.55 76.55 0 0 1-4.915 27.024 76.745 76.745 0 0 1-27.032 4.923h-.108c-9.508-.012-18.618-1.75-27.024-4.919A76.557 76.557 0 0 1 96 128.056v-.112a76.598 76.598 0 0 1 4.91-27.02A76.492 76.492 0 0 1 127.945 96h.108a76.475 76.475 0 0 1 27.032 4.923 76.51 76.51 0 0 1 4.915 27.02v.112zm94.223-21.389h-74.716l52.829-52.833a128.518 128.518 0 0 0-13.828-16.349v-.004a129 129 0 0 0-16.345-13.816l-52.833 52.833V1.782A128.606 128.606 0 0 0 128.064 0h-.132c-7.248.004-14.347.62-21.265 1.782v74.716L53.834 23.665A127.82 127.82 0 0 0 37.497 37.49l-.028.02A128.803 128.803 0 0 0 23.66 53.834l52.837 52.833H1.782S0 120.7 0 127.956v.088c0 7.256.615 14.367 1.782 21.289h74.716l-52.837 52.833a128.91 128.91 0 0 0 30.173 30.173l52.833-52.837v74.72a129.3 129.3 0 0 0 21.24 1.778h.181a129.15 129.15 0 0 0 21.24-1.778v-74.72l52.838 52.837a128.994 128.994 0 0 0 16.341-13.82l.012-.012a129.245 129.245 0 0 0 13.816-16.341l-52.837-52.833h74.724c1.163-6.91 1.77-14 1.778-21.24v-.186c-.008-7.24-.615-14.33-1.778-21.24z" fill="#FF4A00"></path></svg>
-                    <p class="font-bold mt-4">Zapier</p>
-                    <p class="mt-2 text-sm text-gray-500">Connect to 1,000+ apps</p>
-                </div>
-                <div class="rounded-lg py-10 flex flex-col items-center justify-center shadow-lg border border-gray-100">
-                    <svg class="w-16 h-auto" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M19.712.133a5.381 5.381 0 0 0-5.376 5.387 5.381 5.381 0 0 0 5.376 5.386h5.376V5.52A5.381 5.381 0 0 0 19.712.133m0 14.365H5.376A5.381 5.381 0 0 0 0 19.884a5.381 5.381 0 0 0 5.376 5.387h14.336a5.381 5.381 0 0 0 5.376-5.387 5.381 5.381 0 0 0-5.376-5.386" fill="#36C5F0" class=""></path><path d="M53.76 19.884a5.381 5.381 0 0 0-5.376-5.386 5.381 5.381 0 0 0-5.376 5.386v5.387h5.376a5.381 5.381 0 0 0 5.376-5.387m-14.336 0V5.52A5.381 5.381 0 0 0 34.048.133a5.381 5.381 0 0 0-5.376 5.387v14.364a5.381 5.381 0 0 0 5.376 5.387 5.381 5.381 0 0 0 5.376-5.387" fill="#2EB67D" class=""></path><path d="M34.048 54a5.381 5.381 0 0 0 5.376-5.387 5.381 5.381 0 0 0-5.376-5.386h-5.376v5.386A5.381 5.381 0 0 0 34.048 54m0-14.365h14.336a5.381 5.381 0 0 0 5.376-5.386 5.381 5.381 0 0 0-5.376-5.387H34.048a5.381 5.381 0 0 0-5.376 5.387 5.381 5.381 0 0 0 5.376 5.386" fill="#ECB22E" class=""></path><path d="M0 34.249a5.381 5.381 0 0 0 5.376 5.386 5.381 5.381 0 0 0 5.376-5.386v-5.387H5.376A5.381 5.381 0 0 0 0 34.25m14.336-.001v14.364A5.381 5.381 0 0 0 19.712 54a5.381 5.381 0 0 0 5.376-5.387V34.25a5.381 5.381 0 0 0-5.376-5.387 5.381 5.381 0 0 0-5.376 5.387" fill="#E01E5A" class=""></path></g></svg>
-                    <p class="font-bold mt-4">Slack</p>
-                    <p class="mt-2 text-sm text-gray-500">Messaging Platform</p>
-                </div>
-                <div class="rounded-lg py-10 flex flex-col items-center justify-center shadow-lg border border-gray-100">
-                    <svg class="w-16 h-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 262" fill="none"><path d="M192.277 86.567V55.5a23.953 23.953 0 0 0 13.815-21.594v-.727a23.998 23.998 0 0 0-23.934-23.934h-.726a24 24 0 0 0-23.935 23.934v.727A23.949 23.949 0 0 0 171.312 55.5v31.132a67.887 67.887 0 0 0-32.278 14.202l-85.44-66.541A27.259 27.259 0 1 0 40.828 50.9l84.004 65.395a68.079 68.079 0 0 0 1.049 76.757l-25.564 25.565a21.93 21.93 0 0 0-6.343-1.033 22.187 22.187 0 0 0-20.502 13.699 22.19 22.19 0 1 0 42.693 8.492 21.858 21.858 0 0 0-1.033-6.343l25.29-25.29a68.198 68.198 0 0 0 58.778 11.746 68.196 68.196 0 0 0 45.342-39.203 68.198 68.198 0 0 0-3.13-59.858 68.188 68.188 0 0 0-49.183-34.26h.048Zm-10.523 102.354a34.988 34.988 0 0 1-34.225-41.871 34.99 34.99 0 0 1 69.295 6.898 34.99 34.99 0 0 1-34.989 34.989" fill="#FF7A59" class=""></path></svg>
-                    <p class="font-bold mt-4">Hubspot</p>
-                    <p class="mt-2 text-sm text-gray-500">Customer Relations</p>
-                </div>
-                <div class="rounded-lg py-10 flex flex-col items-center justify-center shadow-lg border border-gray-100">
-                    <svg class="w-16 h-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 190" fill="none"><path d="M115.482 49.956V189.13H0L115.482 49.956ZM115.482 0A57.587 57.587 0 0 1 98.57 40.756a57.793 57.793 0 0 1-40.83 16.882c-15.313 0-30-6.073-40.828-16.882A57.586 57.586 0 0 1 0 0h115.482ZM134.507 189.13a57.586 57.586 0 0 1 16.912-40.757 57.792 57.792 0 0 1 40.829-16.881c15.313 0 30 6.072 40.828 16.881a57.586 57.586 0 0 1 16.912 40.757H134.507ZM134.507 139.174V0h115.494L134.507 139.174Z" fill="#03363D"></path></svg>
-                    <p class="font-bold mt-4">Zendesk</p>
-                    <p class="mt-2 text-sm text-gray-500">Customer Messaging</p>
-                </div>
-                <div class="rounded-lg py-10 flex flex-col items-center justify-center shadow-lg border border-gray-100">
-                    <svg class="w-16 h-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 215" fill="none"><path d="M0 162.02V69.962c0-3.137 3.137-5.378 6.095-4.302l106.849 41.592c3.047 1.165 3.316 5.378.448 6.812L6.633 166.144C3.585 167.668 0 165.427 0 162.02Z" fill="#F82B60"></path><path d="M123.611 94.792 16.942 51.766c-3.406-1.434-3.406-6.275 0-7.709L119.31 1.479c4.661-1.972 9.95-1.972 14.7 0l102.367 42.578c3.406 1.434 3.406 6.275 0 7.709L130.155 94.792a8.3 8.3 0 0 1-6.544 0Z" fill="#FCB400"></path><path d="m139.835 214.369 107.386-41.323c1.703-.628 2.778-2.241 2.778-4.034V69.424c0-3.047-2.958-5.11-5.736-4.033l-107.387 41.323c-1.703.627-2.778 2.241-2.778 4.033v99.588c0 3.048 2.958 5.109 5.737 4.034Z" fill="#18BFFF"></path><path d="M112.944 107.252 6.095 65.66c-1.434-.538-2.868-.269-4.033.448l75.295 65.525 36.035-17.569c2.868-1.523 2.599-5.736-.448-6.812Z" fill="#BA2048"></path></svg>
-                    <p class="font-bold mt-4">Airtable</p>
-                    <p class="mt-2 text-sm text-gray-500">Data Management</p>
-                </div>
-                <div class="rounded-lg py-10 flex flex-col items-center justify-center shadow-lg border border-gray-100">
-                    <svg class="w-16 h-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250" fill="none"><path d="m146.101 236.335-42.529-41.47 91.337-93.269 44.032 43.155-92.84 91.584Z" fill="#8AB4F8"></path><path d="M146.283 52.982 103.907 9.717l-92.659 91.779c-11.944 11.944-11.944 31.308 0 43.265l91.267 91.863 43.156-40.37-69.536-73.125 70.148-70.147Z" fill="#4285F4"></path><path d="M238.329 102.209 146.45 10.332c-11.958-11.957-31.35-11.957-43.308 0-11.959 11.958-11.959 31.35 0 43.308l91.879 91.876c11.958 11.958 31.35 11.958 43.308 0 11.959-11.958 11.959-31.349 0-43.307Z" fill="#8AB4F8"></path><path d="M124.092 246.372c16.53 0 29.93-13.4 29.93-29.93 0-16.529-13.4-29.929-29.93-29.929-16.531 0-29.93 13.4-29.93 29.929 0 16.53 13.399 29.93 29.93 29.93Z" fill="#246FDB"></path></svg>
-                    <p class="font-bold mt-4">Google Tag Manager</p>
-                    <p class="mt-2 text-sm text-gray-500">Web Tag Manager</p>
-                </div>
-                <div class="rounded-lg py-10 flex flex-col items-center justify-center shadow-lg border border-gray-100">
-                    <svg class="w-16 h-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve"><path d="M362.9 243.5c3.1-.4 6.2-.4 9.3 0 1.7-3.8 2-10.5.5-17.6-2.2-10.7-5.3-17.2-11.5-16.2s-6.5 8.8-4.2 19.5c1.1 5.9 3.4 11.1 5.9 14.3zm-53.7 8.5c4.5 2 7.2 3.3 8.3 2.1 1.9-1.9-3.5-9.4-12.1-13.1-10.2-4.2-21.8-2.8-30.7 3.7-3 2.2-5.8 5.2-5.4 7.1.9 3.7 10-2.7 22.7-3.5 6.9-.5 12.7 1.7 17.2 3.7zm-9 5.1c-9.1 1.4-15 6.5-13.5 10.1.9.3 1.2.8 5.2-.8 6-2.3 12.4-2.9 18.8-2 2.9.3 4.3.5 5-.5 1.3-2.1-5.8-7.9-15.5-6.8zm54.2 17.2c3.4-6.9-10.9-14-14.3-7-3.4 6.9 11 13.9 14.3 7zm15.7-20.5c-7.7-.1-8 15.8-.3 16 7.8 0 8.1-15.9.3-16zm-219.2 79c-1.3.3-6 1.5-8.5-2.4-5.2-8 11.1-20.4 3-35.9-9.1-17.5-27.9-13.6-35.1-5.6-8.7 9.6-8.7 23.6-5 24.1 4.3.6 4.1-6.5 7.4-11.7 3.9-6 11.8-7.7 17.8-3.8 0 0 .1 0 .1.1 11.6 7.6 1.4 17.8 2.3 28.7 1.4 16.7 18.5 16.4 21.6 9 .4-.7.3-1.7-.2-2.3 0 1.1.6-1.1-3.4-.2zm300.4-17.1c-3.4-11.8-2.6-9.2-6.8-20.6 2.5-3.7 15.3-24.1-3.1-43.3-10.4-10.9-34-16.6-41.2-18.6-1.5-11.4 4.7-58.8-21.6-83.2 20.8-21.6 33.8-45.4 33.8-65.8-.1-39.2-48.3-51.1-107.7-26.5L292.1 63c-.1-.1-22.8-22.3-23.1-22.6-67.6-59-279.4 176.3-211.7 233.5l14.8 12.5c-4 10.7-5.4 22.2-4.1 33.6 3.4 33.5 36.1 60.6 67.7 60.5 57.9 133.4 268.5 133.6 323 3 1.7-4.5 9.1-24.7 9.1-42.5s-10.1-25.3-16.5-25.3zM134.5 364c-22.9-.6-47.6-21.2-50-45.6-6.2-61.4 74.4-75.4 84.2-12.4 4.6 29.7-4.7 58.6-34.2 58zM116 249.5c-15.2 3-28.6 11.6-36.8 23.5-4.9-4.1-14-12-15.6-15-13-24.9 14.3-73.2 33.4-100.4C144.2 90.2 218.1 39.2 252.4 48.4c5.6 1.6 24 22.9 24 22.9s-34.2 19-65.9 45.5c-42.9 33-75.2 80.8-94.5 132.7zm239.4 101.4s-35.8 5.3-69.7-7.1c6.2-20.2 27.1 6.1 96.6-13.8 15.3-4.4 35.4-13 51.1-25.4 3.4 7.8 5.8 16 7.1 24.3 3.7-.7 14.3-.5 11.5 18.1-3.3 19.9-11.8 36.1-26 51-8.9 9.6-19.5 17.6-31.2 23.4-6.5 3.4-13.4 6.3-20.4 8.6-53.6 17.5-108.5-1.7-126.3-43.1-1.4-3.2-2.6-6.4-3.6-9.8-7.5-27.3-1.1-60 18.9-80.6 1.2-1.3 2.5-2.9 2.5-4.8-.2-1.7-.8-3.3-1.9-4.6-7-10.2-31.3-27.5-26.4-61 3.5-24.1 24.5-41 44.2-40l5 .3c8.5.5 15.9 1.6 22.9 1.9 11.7.5 22.3-1.2 34.7-11.6 4.2-3.5 7.6-6.6 13.3-7.5 4.7-1.2 9.6-.3 13.6 2.2 10 6.7 11.4 22.8 11.9 34.6.3 6.7 1.1 23.1 1.4 27.7.6 10.7 3.4 12.2 9.1 14 3.2 1.1 6.2 1.8 10.5 3.1 13.2 3.7 21 7.5 26.1 12.3 2.6 2.5 4.2 5.8 4.8 9.3 1.6 11.4-8.8 25.5-36.4 38.2-46.8 21.7-93.9 14.5-100.7 13.7-20.2-2.7-31.7 23.4-19.6 41.2 22.7 33.5 122.7 20 151.7-21.4.7-1 .1-1.6-.7-1-41.9 28.6-97.3 38.3-128.8 26.1-4.8-1.9-14.8-6.5-16-16.7 43.7 13.5 71.2.7 71.2.7s2.2-2.6-.4-2.3zM203.2 157.3c16.8-19.4 37.4-36.3 56-45.7.3-.2.8-.1 1 .3.1.2.1.5 0 .7-1.5 2.7-4.3 8.4-5.2 12.7-.1.4.2.8.6.9.2.1.4 0 .6-.1 11.5-7.8 31.6-16.3 49.1-17.3.4 0 .8.3.8.7 0 .3-.1.5-.3.7-2.9 2.2-5.5 4.8-7.7 7.8-.2.3-.2.8.2 1 .1.1.3.1.4.1 12.3.1 29.7 4.4 41.1 10.8.8.4.2 1.9-.6 1.7-69.7-16-123.4 18.6-134.8 26.9-.4.2-.8.1-1.1-.2-.3-.4-.3-.8-.1-1z"></path></svg>
-                    <p class="font-bold mt-4">Mailchimp</p>
-                    <p class="mt2 text-sm text-gray-500">Email Marketing</p>
-                </div>
-                <div class="rounded-lg py-10 flex flex-col items-center justify-center shadow-lg border border-gray-100">
-                    <svg class="h-16 w-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 343" fill="none"><path d="M163.818 0H23.736C10.59 0 0 10.663 0 23.736v294.771c0 13.146 10.663 23.737 23.736 23.737H226.19c13.147 0 23.737-10.664 23.737-23.737V85.159h-86.109V0Z" fill="#34A853" class=""></path><path d="M250.001 85.16h-86.182V0l86.182 85.16Z" fill="#188038"></path><path d="M46.89 132.194V245.18h156.149V132.194H46.889Zm136.722 19.354v27.388h-49.08v-27.388h49.08Zm-68.507 0v27.388H66.317v-27.388h48.788Zm-48.788 74.131v-27.388h48.788v27.388H66.317Zm68.215 0v-27.388h49.08v27.388h-49.08Z" fill="#fff"></path></svg>
-                    <p class="font-bold mt-4">Google Sheets</p>
-                    <p class="mt-2 text-sm text-gray-500">Spreadsheet</p>
-                </div>
-            </div>
-            <a href="#_" class="px-8 py-4 sm:w-auto w-full text-center text-base font-medium inline-block rounded text-white hover:bg-{{ config('setting.color') }}-600 bg-{{ config('setting.color') }}-500">View All Integrations</a>
-        </div>
-    </section>
+    <x-home.popular-categories></x-home.popular-categories>
+
 
     <!-- Section 1 -->
     <section class="w-full flex bg-gray-50">
@@ -129,14 +83,14 @@
                 </div>
                 <p class="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">Make a Difference with Your Online
                     <span class="px-2 py-1 relative inline-block">
-                        <svg class="stroke-current bottom-0 absolute text-pink-400 -translate-x-2" viewBox="0 0 410 18" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="stroke-current bottom-0 absolute text-{{ config('setting.color') }}-400 -translate-x-2" viewBox="0 0 410 18" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6 6.4c16.8 16.8 380.8-11.2 397.6 5.602" stroke-width="11.2" fill="none" fill-rule="evenodd" stroke-linecap="round"></path>
                         </svg>
                         <span class="relative">Resume!</span>
                     </span>
                 </p>
                 <p class="max-w-3xl mt-5 mx-auto text-xl text-gray-500">Your resume in minutes with JobHunt resume assistant is ready!</p>
-                <a href="#_" class="text-white px-8 py-4 inline-block mt-5 font-medium text-lg bg-gray-900 focus:ring-4 focus:ring-gray-900 focus:ring-offset-2 rounded-xl">Create an Account</a>
+                <a href="#_" class="text-white px-8 py-4 inline-block mt-5 font-medium text-lg hover:bg-{{ config('setting.color') }}-600 bg-{{ config('setting.color') }}-500 rounded">Create an Account</a>
             </div>
         </div>
     </section>
@@ -150,23 +104,102 @@
         </div>
         <div class="relative w-full px-8 pt-16 pb-16 ml-auto mr-auto bg-top bg-cover sm:max-w-xl md:max-w-full md:px-24 lg:px-8 lg:py-24 lg:pb-32">
             <div class="max-w-xl mb-10 ml-auto mr-auto bg-top bg-cover md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-                <p class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider uppercase bg-purple-600 rounded-full text-purple-50">Featured Jobs</p>
+                <p class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider uppercase bg-{{ config('setting.color') }}-600 rounded-full text-{{ config('setting.color') }}-50">Featured Jobs</p>
                 <div class="max-w-2xl mb-6 ml-auto mr-auto font-sans tracking-tight text-gray-900 bg-top bg-cover sm:text-4xl md:mx-auto">
                     <p class="inline max-w-lg font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">Leading Employers already using job and talent.</p>
                 </div>
             </div>
-            <div class="grid gap-10 row-gap-8 ml-auto mr-auto sm:row-gap-10 lg:max-w-screen-lg sm:grid-cols-1 lg:grid-cols-2">
-                <a href="#" class="block border-l-4 border-transparent hover:border-{{ config(('setting.color')) }}-900 shadow-lg hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <div class="px-4 py-4 sm:px-6">
-
-                        <div class="flex items-center justify-between">
-                            <p class="text-sm font-medium text-{{ config(('setting.color')) }}-600 truncate">Back End Developer</p>
-                            <div class="ml-2 flex-shrink-0 flex">
-                                <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Full-time</p>
+            <div class="grid gap-10 row-gap-8 ml-auto mr-auto sm:row-gap-10 lg:max-w-screen-lg sm:grid-cols-1 lg:grid-cols-1">
+                <a href="/full-stack-developer">
+                    <div class="block rounded-lg shadow-sm">
+                        <div class="block px-6 py-4 border-l-4 border-transparent hover:border-{{ config(('setting.color')) }}-900 shadow-lg hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                            <div class="space-y-6">
+                                <div class="space-y-1">
+                                    <div class="flex items-center justify-between">
+                                        <p class="text-sm font-medium text-{{ config(('setting.color')) }}-600 truncate"> Full-Stack Developer</p>
+                                        <div class="ml-2 flex-shrink-0 flex">
+                                            <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Full-time</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-500">
+                                        Help us design and build more awesome UI tools for developers.
+                                    </p>
+                                </div>
+                                <dl class="space-y-4 lg:flex lg:space-y-0 lg:space-x-6">
+                                    <div>
+                                        <dt class="sr-only">Employment type</dt>
+                                        <dl class="flex items-start space-x-2 text-sm leading-5">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 text-gray-400">
+                                                <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                                                <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15a24.98 24.98 0 01-8-1.308z"></path>
+                                            </svg>
+                                            <span class="text-gray-600">
+                                                Full-time
+                                            </span>
+                                        </dl>
+                                    </div>
+                                    <div>
+                                        <dt class="sr-only">
+                                            Location
+                                        </dt>
+                                        <dl class="flex items-start space-x-2 text-sm leading-5">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 text-gray-400">
+                                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                            <span class="text-gray-600">
+                                                Remote
+                                            </span>
+                                        </dl>
+                                    </div>
+                                    <div>
+                                        <dt class="sr-only">
+                                            Salary
+                                        </dt>
+                                        <dl class="flex items-start space-x-2 text-sm leading-5">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 text-gray-400">
+                                                <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path>
+                                            </svg>
+                                            <span class="text-gray-600">
+                                                $115,000 – $135,000 USD
+                                            </span>
+                                        </dl>
+                                    </div>
+                                    <div>
+                                        <dt class="sr-only">Closing date</dt>
+                                        <dl class="flex items-start space-x-2 text-sm leading-5">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 text-gray-400">
+                                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                                            </svg>
+                                            <span class="text-gray-600">
+                                                <span aria-hidden="true">Closed on</span>
+                                                <time datetime="2020-05-27T21:00:00.0">
+                                                    May 27, 2020
+                                                </time>
+                                            </span>
+                                        </dl>
+                                    </div>
+                                </dl>
                             </div>
                         </div>
-                        <div class="mt-2 sm:flex sm:justify-between">
-                            <div class="sm:flex">
+                    </div>
+                </a>
+                <a href="#" class="block border-l-4 border-transparent hover:border-{{ config(('setting.color')) }}-900 shadow-lg hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                    <div class="px-4 py-4 sm:px-6 space-y-6">
+                        <div class="space-y-1">
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-medium text-{{ config(('setting.color')) }}-600 truncate">Back End Developer</p>
+                                <div class="ml-2 flex-shrink-0 flex">
+                                    <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Full-time</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-500">
+                                Cisco
+                            </p>
+                        </div>
+
+                        <div class="mt-2 lg:flex lg:justify-between">
+                            <div class="space-y-4 lg:flex lg:space-y-0 lg:space-x-6">
                                 <p class="flex items-center text-sm text-gray-500">
                                     <!-- Heroicon name: solid/users -->
                                     <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -174,39 +207,57 @@
                                     </svg>
                                     Engineering
                                 </p>
-                                <p class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                <p class="mt-2 flex items-center text-sm text-gray-500 lg:mt-0 lg:ml-6">
                                     <!-- Heroicon name: solid/location-marker -->
                                     <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                         <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
                                     </svg>
                                     Remote
                                 </p>
-                            </div>
-                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
-                                <!-- Heroicon name: solid/calendar -->
-                                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                                </svg>
-                                <p>
-                                    Closing on
-                                    <time datetime="2020-01-07">January 7, 2020</time>
+                                <p class="mt-2 flex items-center text-sm text-gray-500 lg:mt-0 lg:ml-6">
+                                    <!-- Heroicon name: solid/location-marker -->
+                                    <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                    </svg>
+                                    $115,000 – $135,000 USD
                                 </p>
+                                <p class="mt-2 flex items-center text-sm text-gray-500 lg:mt-0 lg:ml-6">
+                                    <!-- Heroicon name: solid/location-marker -->
+                                    <svg viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-600">
+                                        <span aria-hidden="true">Closed on</span>
+                                        <time datetime="2020-05-27T21:00:00.0">
+                                            May 27, 2020
+                                        </time>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="mt-2 hidden lg:flex items-center text-sm text-gray-500 lg:mt-0">
+                                <!-- Heroicon name: solid/calendar -->
+                                <img class="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
                             </div>
                         </div>
                     </div>
                 </a>
 
                 <a href="#" class="block border-l-4 border-transparent hover:border-{{ config(('setting.color')) }}-900 shadow-lg hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <div class="px-4 py-4 sm:px-6">
-
-                        <div class="flex items-center justify-between">
-                            <p class="text-sm font-medium text-{{ config(('setting.color')) }}-600 truncate">Back End Developer</p>
-                            <div class="ml-2 flex-shrink-0 flex">
-                                <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Full-time</p>
+                    <div class="px-4 py-4 sm:px-6 space-y-6">
+                        <div class="space-y-1">
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-medium text-{{ config(('setting.color')) }}-600 truncate">Back End Developer</p>
+                                <div class="ml-2 flex-shrink-0 flex">
+                                    <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Full-time</p>
+                                </div>
                             </div>
+                            <p class="text-gray-500">
+                                Cisco
+                            </p>
                         </div>
-                        <div class="mt-2 sm:flex sm:justify-between">
-                            <div class="sm:flex">
+
+                        <div class="mt-2 lg:flex lg:justify-between">
+                            <div class="space-y-4 lg:flex lg:space-y-0 lg:space-x-6">
                                 <p class="flex items-center text-sm text-gray-500">
                                     <!-- Heroicon name: solid/users -->
                                     <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -214,39 +265,57 @@
                                     </svg>
                                     Engineering
                                 </p>
-                                <p class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                <p class="mt-2 flex items-center text-sm text-gray-500 lg:mt-0 lg:ml-6">
                                     <!-- Heroicon name: solid/location-marker -->
                                     <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                         <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
                                     </svg>
                                     Remote
                                 </p>
-                            </div>
-                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
-                                <!-- Heroicon name: solid/calendar -->
-                                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                                </svg>
-                                <p>
-                                    Closing on
-                                    <time datetime="2020-01-07">January 7, 2020</time>
+                                <p class="mt-2 flex items-center text-sm text-gray-500 lg:mt-0 lg:ml-6">
+                                    <!-- Heroicon name: solid/location-marker -->
+                                    <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                    </svg>
+                                    $115,000 – $135,000 USD
                                 </p>
+                                <p class="mt-2 flex items-center text-sm text-gray-500 lg:mt-0 lg:ml-6">
+                                    <!-- Heroicon name: solid/location-marker -->
+                                    <svg viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-600">
+                                        <span aria-hidden="true">Closed on</span>
+                                        <time datetime="2020-05-27T21:00:00.0">
+                                            May 27, 2020
+                                        </time>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="mt-2 hidden lg:flex items-center text-sm text-gray-500 lg:mt-0">
+                                <!-- Heroicon name: solid/calendar -->
+                                <img class="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
                             </div>
                         </div>
                     </div>
                 </a>
 
                 <a href="#" class="block border-l-4 border-transparent hover:border-{{ config(('setting.color')) }}-900 shadow-lg hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <div class="px-4 py-4 sm:px-6">
-
-                        <div class="flex items-center justify-between">
-                            <p class="text-sm font-medium text-{{ config(('setting.color')) }}-600 truncate">Back End Developer</p>
-                            <div class="ml-2 flex-shrink-0 flex">
-                                <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Full-time</p>
+                    <div class="px-4 py-4 sm:px-6 space-y-6">
+                        <div class="space-y-1">
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-medium text-{{ config(('setting.color')) }}-600 truncate">Back End Developer</p>
+                                <div class="ml-2 flex-shrink-0 flex">
+                                    <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Full-time</p>
+                                </div>
                             </div>
+                            <p class="text-gray-500">
+                                Cisco
+                            </p>
                         </div>
-                        <div class="mt-2 sm:flex sm:justify-between">
-                            <div class="sm:flex">
+
+                        <div class="mt-2 lg:flex lg:justify-between">
+                            <div class="space-y-4 lg:flex lg:space-y-0 lg:space-x-6">
                                 <p class="flex items-center text-sm text-gray-500">
                                     <!-- Heroicon name: solid/users -->
                                     <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -254,39 +323,57 @@
                                     </svg>
                                     Engineering
                                 </p>
-                                <p class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                <p class="mt-2 flex items-center text-sm text-gray-500 lg:mt-0 lg:ml-6">
                                     <!-- Heroicon name: solid/location-marker -->
                                     <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                         <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
                                     </svg>
                                     Remote
                                 </p>
-                            </div>
-                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
-                                <!-- Heroicon name: solid/calendar -->
-                                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                                </svg>
-                                <p>
-                                    Closing on
-                                    <time datetime="2020-01-07">January 7, 2020</time>
+                                <p class="mt-2 flex items-center text-sm text-gray-500 lg:mt-0 lg:ml-6">
+                                    <!-- Heroicon name: solid/location-marker -->
+                                    <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                    </svg>
+                                    $115,000 – $135,000 USD
                                 </p>
+                                <p class="mt-2 flex items-center text-sm text-gray-500 lg:mt-0 lg:ml-6">
+                                    <!-- Heroicon name: solid/location-marker -->
+                                    <svg viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-600">
+                                        <span aria-hidden="true">Closed on</span>
+                                        <time datetime="2020-05-27T21:00:00.0">
+                                            May 27, 2020
+                                        </time>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="mt-2 hidden lg:flex items-center text-sm text-gray-500 lg:mt-0">
+                                <!-- Heroicon name: solid/calendar -->
+                                <img class="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
                             </div>
                         </div>
                     </div>
                 </a>
 
                 <a href="#" class="block border-l-4 border-transparent hover:border-{{ config(('setting.color')) }}-900 shadow-lg hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <div class="px-4 py-4 sm:px-6">
-
-                        <div class="flex items-center justify-between">
-                            <p class="text-sm font-medium text-{{ config(('setting.color')) }}-600 truncate">Back End Developer</p>
-                            <div class="ml-2 flex-shrink-0 flex">
-                                <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Full-time</p>
+                    <div class="px-4 py-4 sm:px-6 space-y-6">
+                        <div class="space-y-1">
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-medium text-{{ config(('setting.color')) }}-600 truncate">Back End Developer</p>
+                                <div class="ml-2 flex-shrink-0 flex">
+                                    <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Full-time</p>
+                                </div>
                             </div>
+                            <p class="text-gray-500">
+                                Cisco
+                            </p>
                         </div>
-                        <div class="mt-2 sm:flex sm:justify-between">
-                            <div class="sm:flex">
+
+                        <div class="mt-2 lg:flex lg:justify-between">
+                            <div class="space-y-4 lg:flex lg:space-y-0 lg:space-x-6">
                                 <p class="flex items-center text-sm text-gray-500">
                                     <!-- Heroicon name: solid/users -->
                                     <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -294,39 +381,57 @@
                                     </svg>
                                     Engineering
                                 </p>
-                                <p class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                <p class="mt-2 flex items-center text-sm text-gray-500 lg:mt-0 lg:ml-6">
                                     <!-- Heroicon name: solid/location-marker -->
                                     <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                         <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
                                     </svg>
                                     Remote
                                 </p>
-                            </div>
-                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
-                                <!-- Heroicon name: solid/calendar -->
-                                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                                </svg>
-                                <p>
-                                    Closing on
-                                    <time datetime="2020-01-07">January 7, 2020</time>
+                                <p class="mt-2 flex items-center text-sm text-gray-500 lg:mt-0 lg:ml-6">
+                                    <!-- Heroicon name: solid/location-marker -->
+                                    <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                    </svg>
+                                    $115,000 – $135,000 USD
                                 </p>
+                                <p class="mt-2 flex items-center text-sm text-gray-500 lg:mt-0 lg:ml-6">
+                                    <!-- Heroicon name: solid/location-marker -->
+                                    <svg viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-600">
+                                        <span aria-hidden="true">Closed on</span>
+                                        <time datetime="2020-05-27T21:00:00.0">
+                                            May 27, 2020
+                                        </time>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="mt-2 hidden lg:flex items-center text-sm text-gray-500 lg:mt-0">
+                                <!-- Heroicon name: solid/calendar -->
+                                <img class="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
                             </div>
                         </div>
                     </div>
                 </a>
 
                 <a href="#" class="block border-l-4 border-transparent hover:border-{{ config(('setting.color')) }}-900 shadow-lg hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <div class="px-4 py-4 sm:px-6">
-
-                        <div class="flex items-center justify-between">
-                            <p class="text-sm font-medium text-{{ config(('setting.color')) }}-600 truncate">Back End Developer</p>
-                            <div class="ml-2 flex-shrink-0 flex">
-                                <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Full-time</p>
+                    <div class="px-4 py-4 sm:px-6 space-y-6">
+                        <div class="space-y-1">
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-medium text-{{ config(('setting.color')) }}-600 truncate">Back End Developer</p>
+                                <div class="ml-2 flex-shrink-0 flex">
+                                    <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Full-time</p>
+                                </div>
                             </div>
+                            <p class="text-gray-500">
+                                Cisco
+                            </p>
                         </div>
-                        <div class="mt-2 sm:flex sm:justify-between">
-                            <div class="sm:flex">
+
+                        <div class="mt-2 lg:flex lg:justify-between">
+                            <div class="space-y-4 lg:flex lg:space-y-0 lg:space-x-6">
                                 <p class="flex items-center text-sm text-gray-500">
                                     <!-- Heroicon name: solid/users -->
                                     <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -334,150 +439,40 @@
                                     </svg>
                                     Engineering
                                 </p>
-                                <p class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                <p class="mt-2 flex items-center text-sm text-gray-500 lg:mt-0 lg:ml-6">
                                     <!-- Heroicon name: solid/location-marker -->
                                     <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                         <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
                                     </svg>
                                     Remote
                                 </p>
-                            </div>
-                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
-                                <!-- Heroicon name: solid/calendar -->
-                                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                                </svg>
-                                <p>
-                                    Closing on
-                                    <time datetime="2020-01-07">January 7, 2020</time>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="#" class="block border-l-4 border-transparent hover:border-{{ config(('setting.color')) }}-900 shadow-lg hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <div class="px-4 py-4 sm:px-6">
-
-                        <div class="flex items-center justify-between">
-                            <p class="text-sm font-medium text-{{ config(('setting.color')) }}-600 truncate">Back End Developer</p>
-                            <div class="ml-2 flex-shrink-0 flex">
-                                <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Full-time</p>
-                            </div>
-                        </div>
-                        <div class="mt-2 sm:flex sm:justify-between">
-                            <div class="sm:flex">
-                                <p class="flex items-center text-sm text-gray-500">
-                                    <!-- Heroicon name: solid/users -->
-                                    <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                                    </svg>
-                                    Engineering
-                                </p>
-                                <p class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                <p class="mt-2 flex items-center text-sm text-gray-500 lg:mt-0 lg:ml-6">
                                     <!-- Heroicon name: solid/location-marker -->
                                     <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                         <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
                                     </svg>
-                                    Remote
+                                    $115,000 – $135,000 USD
                                 </p>
-                            </div>
-                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
-                                <!-- Heroicon name: solid/calendar -->
-                                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                                </svg>
-                                <p>
-                                    Closing on
-                                    <time datetime="2020-01-07">January 7, 2020</time>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="#" class="block border-l-4 border-transparent hover:border-{{ config(('setting.color')) }}-900 shadow-lg hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <div class="px-4 py-4 sm:px-6">
-
-                        <div class="flex items-center justify-between">
-                            <p class="text-sm font-medium text-{{ config(('setting.color')) }}-600 truncate">Back End Developer</p>
-                            <div class="ml-2 flex-shrink-0 flex">
-                                <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Full-time</p>
-                            </div>
-                        </div>
-                        <div class="mt-2 sm:flex sm:justify-between">
-                            <div class="sm:flex">
-                                <p class="flex items-center text-sm text-gray-500">
-                                    <!-- Heroicon name: solid/users -->
-                                    <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                                    </svg>
-                                    Engineering
-                                </p>
-                                <p class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                <p class="mt-2 flex items-center text-sm text-gray-500 lg:mt-0 lg:ml-6">
                                     <!-- Heroicon name: solid/location-marker -->
-                                    <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                    <svg viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
                                     </svg>
-                                    Remote
+                                    <span class="text-gray-600">
+                                        <span aria-hidden="true">Closed on</span>
+                                        <time datetime="2020-05-27T21:00:00.0">
+                                            May 27, 2020
+                                        </time>
+                                    </span>
                                 </p>
                             </div>
-                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                            <div class="mt-2 hidden lg:flex items-center text-sm text-gray-500 lg:mt-0">
                                 <!-- Heroicon name: solid/calendar -->
-                                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                                </svg>
-                                <p>
-                                    Closing on
-                                    <time datetime="2020-01-07">January 7, 2020</time>
-                                </p>
+                                <img class="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
                             </div>
                         </div>
                     </div>
                 </a>
-
-                <a href="#" class="block border-l-4 border-transparent hover:border-{{ config(('setting.color')) }}-900 shadow-lg hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    <div class="px-4 py-4 sm:px-6">
-
-                        <div class="flex items-center justify-between">
-                            <p class="text-sm font-medium text-{{ config(('setting.color')) }}-600 truncate">Back End Developer</p>
-                            <div class="ml-2 flex-shrink-0 flex">
-                                <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Full-time</p>
-                            </div>
-                        </div>
-                        <div class="mt-2 sm:flex sm:justify-between">
-                            <div class="sm:flex">
-                                <p class="flex items-center text-sm text-gray-500">
-                                    <!-- Heroicon name: solid/users -->
-                                    <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                                    </svg>
-                                    Engineering
-                                </p>
-                                <p class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
-                                    <!-- Heroicon name: solid/location-marker -->
-                                    <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-                                    </svg>
-                                    Remote
-                                </p>
-                            </div>
-                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
-                                <!-- Heroicon name: solid/calendar -->
-                                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                                </svg>
-                                <p>
-                                    Closing on
-                                    <time datetime="2020-01-07">January 7, 2020</time>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-
-
             </div>
         </div>
     </section>

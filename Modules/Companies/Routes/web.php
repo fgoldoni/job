@@ -11,14 +11,13 @@
 |
 */
 
+use Modules\Companies\Http\Controllers\CompaniesController;
 use Modules\Companies\Http\Livewire\Admin\CompaniesDatatable;
 
-Route::middleware(['auth', 'verified', 'role:User'])->prefix('admin')->group(
-    function () {
+Route::middleware(['auth', 'verified', 'role:User'])->prefix('admin')->group(function () {
         Route::get('/companies', CompaniesDatatable::class)->name('admin.companies');
-    }
-);
+});
 
 Route::prefix('companies')->group(function () {
-    Route::get('/', [\Modules\Companies\Http\Controllers\CompaniesController::class, 'index'])->name('companies');
+    Route::get('/', [CompaniesController::class, 'index'])->name('companies');
 });

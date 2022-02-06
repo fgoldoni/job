@@ -19,91 +19,106 @@ class CategoriesDatabaseSeeder extends Seeder
 
         Category::create(
             [
-            'name'     => 'Car & Traffic'
+                'name'     => 'Engineering',
+                'user_id'  => 1
             ]
         );
 
         Category::create(
             [
-            'name'     => 'Building & Renovation'
+                'name'     => 'Financial Services',
+                'user_id'  => 1
             ]
         );
 
         Category::create(
             [
-            'name'     => 'Education & Science'
+                'name'     => 'Banking',
+                'user_id'  => 1
             ]
         );
 
         Category::create(
             [
-            'name'     => 'Computers & Electronics'
+                'name'     => 'Security & Safety',
+                'user_id'  => 1
             ]
         );
 
         Category::create(
             [
-            'name'     => 'Authorities & Associations'
+                'name'     => 'Training',
+                'user_id'  => 1
             ]
         );
 
         Category::create(
             [
-            'name'     => 'Services'
+                'name'     => 'Public Service',
+                'user_id'  => 1
             ]
         );
 
         Category::create(
             [
-            'name'     => 'Shopping & Ordering'
+                'name'     => 'Real Estate',
+                'user_id'  => 1
             ]
         );
 
         Category::create(
             [
-            'name'     => 'Hotels & Gastronomie'
+                'name'     => 'Independent & Freelance',
+                'user_id'  => 1
             ]
         );
 
         Category::create(
             [
-            'name'     => 'Travel'
+                'name'     => 'IT & Telecoms',
+                'user_id'  => 1
             ]
         );
 
         Category::create(
             [
-            'name'     => 'Law'
+                'name'     => 'Marketing & Communication',
+                'user_id'  => 1
             ]
         );
 
         Category::create(
             [
-            'name'     => 'Health & Wellness'
+                'name'     => 'Babysitting & Nanny Work',
+                'user_id'  => 1
             ]
         );
 
         Category::create(
             [
-            'name'     => 'Nature & Environment'
+                'name'     => 'Human Resources',
+                'user_id'  => 1
             ]
         );
 
         Category::create(
             [
-            'name'     => 'Advertising & Media'
+                'name'     => 'Medical & Healthcare',
+                'user_id'  => 1
             ]
         );
 
         Category::create(
             [
-            'name'     => 'Living & Furnishing'
+                'name'     => 'Tourism & Restaurants',
+                'user_id'  => 1
             ]
         );
 
         Category::create(
             [
-            'name'     => 'Living & Furnishing'
+                'name'     => 'Transportation & Logistics',
+                'user_id'  => 1
             ]
         );
     }

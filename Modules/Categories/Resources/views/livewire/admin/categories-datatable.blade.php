@@ -95,11 +95,10 @@
                     <x-table.heading class="pr-0 w-8">
                         <x-input.checkbox wire:model="selectPage" />
                     </x-table.heading>
-                    <x-table.heading sortable multiColumn wire:click="sortBy('name')" :direction="$sorts['name'] ?? null">Name</x-table.heading>
-                    <x-table.heading sortable multiColumn wire:click="sortBy('email')" :direction="$sorts['email'] ?? null">Contact</x-table.heading>
-                    <x-table.heading sortable multiColumn wire:click="sortBy('email_verified_at')" :direction="$sorts['email_verified_at'] ?? null">User</x-table.heading>
-                    <x-table.heading sortable multiColumn wire:click="sortBy('online')" :direction="$sorts['online'] ?? null">Status</x-table.heading>
-                    <x-table.heading sortable multiColumn wire:click="sortBy('created_at')" :direction="$sorts['created_at'] ?? null">created at</x-table.heading>
+                    <x-table.heading sortable multiColumn wire:click="sortBy('name')" :direction="$sorts['name'] ?? null">{{ __('tables.name') }}</x-table.heading>
+                    <x-table.heading>{{ __('tables.user') }}</x-table.heading>
+                    <x-table.heading sortable multiColumn wire:click="sortBy('online')" :direction="$sorts['online'] ?? null">{{ __('tables.status') }}</x-table.heading>
+                    <x-table.heading sortable multiColumn wire:click="sortBy('created_at')" :direction="$sorts['created_at'] ?? null">{{ __('tables.created_at') }}</x-table.heading>
                     <x-table.heading />
                 </x-slot>
 
@@ -126,41 +125,21 @@
                             </x-table.cell>
 
                             <x-table.cell>
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-10 w-10">
-                                        <img class="h-10 w-10 rounded-full" src=" {{ $item->logo_url }}" alt="Avatar">
-                                    </div>
-                                    <div class="ml-4">
-                                        <div class="text-sm font-medium text-gray-900 truncate">
-                                            {{ $item->name }}
-                                        </div>
-                                        <div class="text-sm text-gray-500">
-                                            {{ $item->jobs->count() }} Jobs
-                                        </div>
-                                    </div>
-                                </div>
-                            </x-table.cell>
+                                <span href="#" class="inline-flex space-x-2 truncate text-sm leading-5">
+                                <x-icon.cash class="text-gray-400"/>
 
-
-                            <x-table.cell>
-                                <div>
-                                    <div class="text-sm font-medium text-gray-900 truncate">
-                                        {{ $item->email }}
-                                    </div>
-                                    <div class="text-sm text-gray-500">
-                                        {{ $item->phone }}
-                                    </div>
-                                </div>
+                                <p class="text-gray-600 truncate">
+                                    {{ $item->name }}
+                                </p>
+                            </span>
                             </x-table.cell>
 
                             <x-table.cell>
-                                <span class="text-gray-900 font-medium truncate">{{ $item->user->name }} </span>
+                                <span class="text-gray-900 font-medium truncate">{{ $item->user ? $item->user->name : '' }} </span>
                             </x-table.cell>
 
                             <x-table.cell>
-                                <span class="text-gray-900 font-medium truncate">
-                                     @livewire('button.status', ['model' => $item, 'field' => 'online'], key($item->id))
-                                </span>
+                                @livewire('button.status', ['model' => $item, 'field' => 'online'], key($item->id))
                             </x-table.cell>
 
                             <x-table.cell>
@@ -215,30 +194,20 @@
     <!-- Save User Modal -->
     <form wire:submit.prevent="save">
         <x-modal.dialog wire:model.defer="showEditModal">
-            <x-slot name="title">Edit User</x-slot>
+            <x-slot name="title">Edit Category</x-slot>
 
             <x-slot name="content">
-                <x-input.group label="Photo" for="avatar" :error="$errors->first('avatar')">
-                    <x-input.file-upload wire:model="avatar" id="avatar">
-                    <span class="h-12 w-12 rounded-full overflow-hidden bg-gray-100">
-                        @if ($avatar)
-                            <img src="{{ $avatar->temporaryUrl() }}" alt="Avatar">
-                        @else
-                            <img src="{{ $editing->avatar_url }}" alt="Avatar">
-                        @endif
-                    </span>
-                    </x-input.file-upload>
+                <x-input.group for="name" label="Name" :error="$errors->first('editing.name')">
+                    <x-input.text wire:model="editing.name" id="name" placeholder="Name" />
                 </x-input.group>
 
-                <x-input.group for="title" label="Title" :error="$errors->first('editing.title')">
-                    <x-input.text wire:model="editing.name" id="title" placeholder="Name" />
+                <x-input.group for="online" label="Online" :error="$errors->first('editing.online')">
+                    <x-input.checkbox wire:model="editing.online" id="online" placeholder="Online" />
                 </x-input.group>
 
-                <x-input.group for="email" label="Email" :error="$errors->first('editing.email')">
-                    <x-input.text type="email" wire:model="editing.email" id="email" />
+                <x-input.group for="description" label="Description" :error="$errors->first('editing.description')">
+                    <x-input.textarea wire:model="editing.description" id="description" placeholder="Description" />
                 </x-input.group>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
             </x-slot>
 
             <x-slot name="footer">
