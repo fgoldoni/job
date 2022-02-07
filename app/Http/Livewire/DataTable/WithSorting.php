@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Livewire\DataTable;
 
 trait WithSorting
@@ -8,9 +7,13 @@ trait WithSorting
 
     public function sortBy($field)
     {
-       if (! isset($this->sorts[$field])) return $this->sorts[$field] = 'asc';
+        if (!isset($this->sorts[$field])) {
+            return $this->sorts[$field] = 'asc';
+        }
 
-       if ($this->sorts[$field] === 'asc') return $this->sorts[$field] = 'desc';
+        if ($this->sorts[$field] === 'asc') {
+            return $this->sorts[$field] = 'desc';
+        }
 
         unset($this->sorts[$field]);
     }

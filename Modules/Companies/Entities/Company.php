@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Companies\Entities;
 
 use App\Models\User;
@@ -40,8 +39,8 @@ class Company extends Model
             'world_countries.name' => 10,
         ],
         'joins' => [
-            'users' => ['users.id','companies.world_country_id'],
-            'world_countries' => ['world_countries.id','companies.world_country_id'],
+            'users' => ['users.id', 'companies.world_country_id'],
+            'world_countries' => ['world_countries.id', 'companies.world_country_id'],
         ],
     ];
 
@@ -73,10 +72,9 @@ class Company extends Model
             : $this->defaultLogoUrl();
     }
 
-
     protected function defaultLogoUrl()
     {
-        return 'https://ui-avatars.com/api/?name='.urlencode($this->name).'&color=7F9CF5&background=EBF4FF';
+        return 'https://ui-avatars.com/api/?name=' . urlencode($this->name) . '&color=7F9CF5&background=EBF4FF';
     }
 
     /**

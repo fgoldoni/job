@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Settings\Http\Livewire\Admin;
 
 use App\Http\Livewire\DataTable\WithCachedRows;
@@ -11,7 +10,6 @@ use Modules\Settings\Entities\Setting;
 class Settings extends Component
 {
     use WithCachedRows;
-
 
     protected function updated($proprety, $value)
     {

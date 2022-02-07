@@ -1,6 +1,4 @@
 <?php
-
-
 namespace App\Http\Traits;
 
 use Illuminate\Http\UploadedFile;
@@ -25,7 +23,8 @@ trait HasAvatar
         tap($this->avatar_path, function ($previous) use ($photo) {
             $this->forceFill([
                 'avatar_path' => $photo->storePublicly(
-                    '/', ['disk' => $this->avatarDisk()]
+                    '/',
+                    ['disk' => $this->avatarDisk()]
                 ),
             ])->save();
 
@@ -42,7 +41,7 @@ trait HasAvatar
      */
     public function deleteAvatar()
     {
-        if (! Features::managesAvatars()) {
+        if (!Features::managesAvatars()) {
             return;
         }
 
@@ -72,7 +71,7 @@ trait HasAvatar
      */
     protected function defaultAvatarUrl()
     {
-        return 'https://ui-avatars.com/api/?name='.urlencode($this->name).'&color=7F9CF5&background=EBF4FF';
+        return 'https://ui-avatars.com/api/?name=' . urlencode($this->name) . '&color=7F9CF5&background=EBF4FF';
     }
 
     /**

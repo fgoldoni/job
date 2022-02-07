@@ -13,7 +13,6 @@
 
 use Modules\Users\Http\Livewire\Admin\UsersDatatable;
 
-
 Route::middleware(['auth', 'verified', 'role:User'])->prefix('admin')->group(
     function () {
         Route::get('/transactions', UsersDatatable::class)->name('admin.transactions');

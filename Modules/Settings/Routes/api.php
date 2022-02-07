@@ -14,7 +14,8 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('auth:api')->get(
-    '/settings', function (Request $request) {
+    '/settings',
+    function (Request $request) {
         return $request->user();
     }
 );

@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Settings\Providers;
 
 use Illuminate\Contracts\Cache\Factory;
@@ -19,7 +18,6 @@ class SettingsServiceProvider extends ServiceProvider
      */
     protected $moduleNameLower = 'settings';
 
-
     public function boot(Factory $cache, Setting $setting)
     {
         $this->registerTranslations();
@@ -29,7 +27,7 @@ class SettingsServiceProvider extends ServiceProvider
 
         if (Schema::hasTable('settings')) {
             $setting = $cache->rememberForever('settings', function () use ($setting) {
-                    return $setting->pluck('value', 'name')->all();
+                return $setting->pluck('value', 'name')->all();
             });
 
             config()->set('setting', $setting);
@@ -56,11 +54,13 @@ class SettingsServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-            module_path($this->moduleName, 'Config/config.php') => config_path($this->moduleNameLower . '.php'),
-            ], 'config'
+                module_path($this->moduleName, 'Config/config.php') => config_path($this->moduleNameLower . '.php'),
+            ],
+            'config'
         );
         $this->mergeConfigFrom(
-            module_path($this->moduleName, 'Config/config.php'), $this->moduleNameLower
+            module_path($this->moduleName, 'Config/config.php'),
+            $this->moduleNameLower
         );
     }
 
@@ -77,8 +77,9 @@ class SettingsServiceProvider extends ServiceProvider
 
         $this->publishes(
             [
-            $sourcePath => $viewPath
-            ], ['views', $this->moduleNameLower . '-module-views']
+                $sourcePath => $viewPath
+            ],
+            ['views', $this->moduleNameLower . '-module-views']
         );
 
         $this->loadViewsFrom(array_merge($this->getPublishableViewPaths(), [$sourcePath]), $this->moduleNameLower);

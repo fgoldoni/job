@@ -1,8 +1,6 @@
 <?php
-
 namespace Modules\Settings\Entities;
 
-use App\Http\Traits\HasLogo;
 use Database\Factories\SettingFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

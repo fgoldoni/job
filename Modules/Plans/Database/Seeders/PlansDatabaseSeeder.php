@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Plans\Database\Seeders;
 
 use Illuminate\Database\Seeder;

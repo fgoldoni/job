@@ -18,5 +18,5 @@ Route::middleware(['auth', 'verified', 'role:User'])->prefix('admin')->group(fun
 });
 
 Route::prefix('categories')->group(function () {
-        Route::get('/', 'CategoriesController@index');
+    Route::get('/', 'CategoriesController@index');
 });

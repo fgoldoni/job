@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Dashboard\Providers;
 
 use Illuminate\Support\Facades\Route;

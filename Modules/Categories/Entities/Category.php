@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Categories\Entities;
 
 use App\Models\User;
@@ -21,7 +20,6 @@ class Category extends \Rinvex\Categories\Models\Category
     protected $casts = [
         'online' => 'boolean',
     ];
-
 
     protected $searchable = [
         'columns' => [

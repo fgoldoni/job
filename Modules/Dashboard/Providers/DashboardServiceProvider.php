@@ -1,9 +1,7 @@
 <?php
-
 namespace Modules\Dashboard\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Database\Eloquent\Factory;
 
 class DashboardServiceProvider extends ServiceProvider
 {
@@ -49,11 +47,13 @@ class DashboardServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-            module_path($this->moduleName, 'Config/config.php') => config_path($this->moduleNameLower . '.php'),
-            ], 'config'
+                module_path($this->moduleName, 'Config/config.php') => config_path($this->moduleNameLower . '.php'),
+            ],
+            'config'
         );
         $this->mergeConfigFrom(
-            module_path($this->moduleName, 'Config/config.php'), $this->moduleNameLower
+            module_path($this->moduleName, 'Config/config.php'),
+            $this->moduleNameLower
         );
     }
 
@@ -70,8 +70,9 @@ class DashboardServiceProvider extends ServiceProvider
 
         $this->publishes(
             [
-            $sourcePath => $viewPath
-            ], ['views', $this->moduleNameLower . '-module-views']
+                $sourcePath => $viewPath
+            ],
+            ['views', $this->moduleNameLower . '-module-views']
         );
 
         $this->loadViewsFrom(array_merge($this->getPublishableViewPaths(), [$sourcePath]), $this->moduleNameLower);

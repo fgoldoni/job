@@ -1,8 +1,6 @@
 <?php
-
 namespace App\Http\Livewire\Button;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;
 
@@ -23,7 +21,6 @@ class Status extends Component
     {
         $this->model->setAttribute($this->field, $value)->save();
     }
-
 
     public function render()
     {

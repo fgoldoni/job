@@ -15,7 +15,7 @@ use Modules\Companies\Http\Controllers\CompaniesController;
 use Modules\Companies\Http\Livewire\Admin\CompaniesDatatable;
 
 Route::middleware(['auth', 'verified', 'role:User'])->prefix('admin')->group(function () {
-        Route::get('/companies', CompaniesDatatable::class)->name('admin.companies');
+    Route::get('/companies', CompaniesDatatable::class)->name('admin.companies');
 });
 
 Route::prefix('companies')->group(function () {

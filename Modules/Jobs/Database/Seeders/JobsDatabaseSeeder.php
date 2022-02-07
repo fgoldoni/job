@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Jobs\Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -17,7 +16,7 @@ class JobsDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        for ($i=0; $i <= 50; $i++) {
+        for ($i = 0; $i <= 50; $i++) {
             $job = Job::factory()->create();
             $job->attachCategories(rand(2, 10));
         }

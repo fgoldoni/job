@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full bg-gray-100">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full dark">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
 
-    <body class="font-sans h-full">
+    <body class="font-sans h-full bg-{{ config('setting.dark') }}-100 dark:bg-{{ config('setting.dark') }}-900 dark:text-white">
         @yield('body')
 
         @livewireScripts

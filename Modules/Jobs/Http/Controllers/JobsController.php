@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Jobs\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
@@ -45,7 +44,7 @@ class JobsController extends Controller
      * @param  int $id
      * @return Renderable
      */
-    public function show($id)
+    public function show()
     {
         return view('jobs::show');
     }

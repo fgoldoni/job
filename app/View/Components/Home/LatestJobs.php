@@ -1,5 +1,4 @@
 <?php
-
 namespace App\View\Components\Home;
 
 use Illuminate\View\Component;
@@ -11,7 +10,6 @@ class LatestJobs extends Component
      * @var \Modules\Jobs\Entities\Job
      */
     private $job;
-
 
     public function __construct(Job $job)
     {

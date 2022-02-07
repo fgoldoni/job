@@ -1,5 +1,4 @@
 <?php
-
 namespace App\View\Components\Input;
 
 use Illuminate\View\Component;

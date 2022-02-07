@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Livewire\Button;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -31,8 +30,6 @@ class Toggle extends Component
             $this->notify('A fresh verification link has been sent to your email address.');
         }
     }
-
-
 
     public function render()
     {

@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Categories\Http\Livewire\Admin;
 
 use App\Http\Livewire\DataTable\WithBulkActions;
@@ -69,7 +68,8 @@ class CategoriesDatatable extends Component
         return response()->streamDownload(
             function () {
                 echo $this->selectedRowsQuery->toCsv();
-            }, 'users.csv'
+            },
+            'users.csv'
         );
     }
 
@@ -81,7 +81,7 @@ class CategoriesDatatable extends Component
 
         $this->showDeleteModal = false;
 
-        $this->notify('You\'ve deleted '.$deleteCount.' users');
+        $this->notify('You\'ve deleted ' . $deleteCount . ' users');
     }
 
     public function makeBlankCategory()
@@ -93,7 +93,7 @@ class CategoriesDatatable extends Component
     {
         $this->useCachedRows();
 
-        $this->showFilters = ! $this->showFilters;
+        $this->showFilters = !$this->showFilters;
     }
 
     public function create()
@@ -149,8 +149,8 @@ class CategoriesDatatable extends Component
         $query = Category::search($this->filters['search'])
             ->published()
             ->childrenFor('area')
-            ->when($this->filters['date-min'], fn($query, $date) => $query->where('created_at', '>=', Carbon::parse($date)))
-            ->when($this->filters['date-max'], fn($query, $date) => $query->where('created_at', '<=', Carbon::parse($date)))
+            ->when($this->filters['date-min'], fn ($query, $date) => $query->where('created_at', '>=', Carbon::parse($date)))
+            ->when($this->filters['date-max'], fn ($query, $date) => $query->where('created_at', '<=', Carbon::parse($date)))
             ->with(['user']);
 
         return $this->applySorting($query);
@@ -159,13 +159,13 @@ class CategoriesDatatable extends Component
     public function getRowsProperty()
     {
         return $this->cache(function () {
-                return $this->applyPagination($this->rowsQuery);
+            return $this->applyPagination($this->rowsQuery);
         });
     }
 
     public function render()
     {
-        return view('categories::livewire.admin.categories-datatable', [ 'items' => $this->rows ])
-            ->extends('layouts.admin.app', [ 'title' => 'Categories' ]);
+        return view('categories::livewire.admin.categories-datatable', ['items' => $this->rows])
+            ->extends('layouts.admin.app', ['title' => 'Categories']);
     }
 }

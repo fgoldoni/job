@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Settings\Providers;
 
 use Illuminate\Contracts\Cache\Factory;
@@ -9,7 +8,6 @@ use Modules\Settings\Entities\Setting;
 
 class MailConfigServiceProvider extends ServiceProvider
 {
-
     public function boot(Factory $cache, Setting $setting)
     {
         if (Schema::hasTable('settings')) {
@@ -27,13 +25,11 @@ class MailConfigServiceProvider extends ServiceProvider
         config()->set('mail.mailers.smtp.username', config('setting.mail_username'));
         config()->set('mail.mailers.smtp.password', config('setting.mail_password'));
 
-
         config()->set('mail.mailers.sendmail.path', config('setting.sendmail_path'));
         config()->set('mail.mailers.log.channel', config('setting.log_channel'));
 
         config()->set('mail.mailers.from.address', config('setting.mail_from'));
         config()->set('mail.mailers.from.name', config('setting.mail_name'));
-
 
         config()->set('services.mailgun.domain', config('setting.mailgun_domain'));
         config()->set('services.mailgun.secret', config('setting.mailgun_secret'));
@@ -51,6 +47,7 @@ class MailConfigServiceProvider extends ServiceProvider
         config()->set('mail.reply_to.address', config('setting.mail_reply_to'));
         config()->set('mail.reply_to.name', config('setting.mail_name'));
     }
+
     /**
      * Register the service provider.
      *

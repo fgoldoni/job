@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Roles\Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -19,7 +18,6 @@ class RolesDatabaseSeeder extends Seeder
         Model::unguard();
 
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
-
 
         $permissionsByRole = [
             'Administrator' => ['users:read', 'users:update', 'users:delete', 'users:create', 'roles:read', 'roles:update', 'roles:delete', 'roles:create'],
@@ -44,8 +42,8 @@ class RolesDatabaseSeeder extends Seeder
                 ->insert(
                     collect($permissionIds)->map(
                         fn ($id) => [
-                        'role_id' => $role->id,
-                        'permission_id' => $id
+                            'role_id' => $role->id,
+                            'permission_id' => $id
                         ]
                     )->toArray()
                 );

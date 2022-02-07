@@ -1,6 +1,4 @@
 <?php
-
-
 namespace App\Http\Traits;
 
 use Illuminate\Http\UploadedFile;
@@ -40,7 +38,7 @@ trait HasLogo
      */
     public function deleteLogo()
     {
-        if (! Features::managesLogos()) {
+        if (!Features::managesLogos()) {
             return;
         }
 
@@ -70,7 +68,7 @@ trait HasLogo
      */
     protected function defaultLogoUrl()
     {
-        return 'https://ui-logos.com/api/?name='.urlencode($this->value).'&color=7F9CF5&background=EBF4FF';
+        return 'https://ui-logos.com/api/?name=' . urlencode($this->value) . '&color=7F9CF5&background=EBF4FF';
     }
 
     /**

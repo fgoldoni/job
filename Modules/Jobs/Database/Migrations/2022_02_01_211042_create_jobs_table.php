@@ -14,7 +14,8 @@ class CreateJobsTable extends Migration
     public function up()
     {
         Schema::create(
-            'jobs', function (Blueprint $table) {
+            'jobs',
+            function (Blueprint $table) {
                 $table->increments('id');
 
                 $table->string('name');
@@ -30,7 +31,8 @@ class CreateJobsTable extends Migration
         );
 
         Schema::table(
-            'jobs', function (Blueprint $table) {
+            'jobs',
+            function (Blueprint $table) {
                 $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
                 $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
             }

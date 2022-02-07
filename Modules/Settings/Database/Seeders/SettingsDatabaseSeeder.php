@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Settings\Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -19,7 +18,10 @@ class SettingsDatabaseSeeder extends Seeder
 
         Setting::factory()->create(['name' => 'logo', 'value' => 'nmw1R9MbdQuErQ1XoeOcwFPKFWzjdxhyNdRkCxd5.svg']);
         Setting::factory()->create(['name' => 'favicon', 'value' => 'QMLeen34SJPHX1o6SUKdGnGTLiLcNiso5ao1t98R.ico']);
+
         Setting::factory()->create(['name' => 'color', 'value' => 'indigo']);
+        Setting::factory()->create(['name' => 'dark', 'value' => 'gray']);
+
         Setting::factory()->create(['name' => 'title', 'value' => 'Job Hunt']);
         Setting::factory()->create(['name' => 'description', 'value' => 'Job Hunt']);
         Setting::factory()->create(['name' => 'phone', 'value' => 'phone']);
@@ -31,7 +33,6 @@ class SettingsDatabaseSeeder extends Seeder
         Setting::factory()->create(['name' => 'mail_encryption', 'value' => null]);
         Setting::factory()->create(['name' => 'mail_username', 'value' => null]);
         Setting::factory()->create(['name' => 'mail_password', 'value' => null]);
-
 
         Setting::factory()->create(['name' => 'mail_from', 'value' => 'service@jobhunt.com']);
         Setting::factory()->create(['name' => 'mail_name', 'value' => 'Job Hunt']);
@@ -46,7 +47,6 @@ class SettingsDatabaseSeeder extends Seeder
 
         Setting::factory()->create(['name' => 'postmark_token', 'value' => null]);
         Setting::factory()->create(['name' => 'postmark_message_stream_id', 'value' => null]);
-
 
         Setting::factory()->create(['name' => 'ses_key', 'value' => '']);
         Setting::factory()->create(['name' => 'ses_secret', 'value' => '']);

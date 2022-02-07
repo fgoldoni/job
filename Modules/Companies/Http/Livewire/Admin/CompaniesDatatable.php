@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Companies\Http\Livewire\Admin;
 
 use App\Http\Livewire\DataTable\WithBulkActions;
@@ -7,7 +6,6 @@ use App\Http\Livewire\DataTable\WithCachedRows;
 use App\Http\Livewire\DataTable\WithPerPagePagination;
 use App\Http\Livewire\DataTable\WithSorting;
 use Illuminate\Support\Carbon;
-use Illuminate\Validation\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Modules\Companies\Entities\Company;
@@ -43,7 +41,7 @@ class CompaniesDatatable extends Component
     {
         return [
             'editing.name' => 'required|min:3',
-            'editing.email' => 'required|max:255|unique:users,email,'. $this->editing->id,
+            'editing.email' => 'required|max:255|unique:users,email,' . $this->editing->id,
             'avatar' => 'nullable|image|max:1000',
         ];
     }
@@ -69,7 +67,8 @@ class CompaniesDatatable extends Component
         return response()->streamDownload(
             function () {
                 echo $this->selectedRowsQuery->toCsv();
-            }, 'users.csv'
+            },
+            'users.csv'
         );
     }
 
@@ -81,7 +80,7 @@ class CompaniesDatatable extends Component
 
         $this->showDeleteModal = false;
 
-        $this->notify('You\'ve deleted '.$deleteCount.' users');
+        $this->notify('You\'ve deleted ' . $deleteCount . ' users');
     }
 
     public function makeBlankCompany()
@@ -93,7 +92,7 @@ class CompaniesDatatable extends Component
     {
         $this->useCachedRows();
 
-        $this->showFilters = ! $this->showFilters;
+        $this->showFilters = !$this->showFilters;
     }
 
     public function create()
@@ -155,8 +154,8 @@ class CompaniesDatatable extends Component
     public function getRowsQueryProperty()
     {
         $query = Company::search($this->filters['search'])
-            ->when($this->filters['date-min'], fn($query, $date) => $query->where('created_at', '>=', Carbon::parse($date)))
-            ->when($this->filters['date-max'], fn($query, $date) => $query->where('created_at', '<=', Carbon::parse($date)))
+            ->when($this->filters['date-min'], fn ($query, $date) => $query->where('created_at', '>=', Carbon::parse($date)))
+            ->when($this->filters['date-max'], fn ($query, $date) => $query->where('created_at', '<=', Carbon::parse($date)))
             ->with(['user:id,name', 'jobs:id,name,company_id', 'country']);
 
         return $this->applySorting($query);
@@ -173,7 +172,7 @@ class CompaniesDatatable extends Component
 
     public function render()
     {
-        return view('companies::livewire.admin.companies-datatable', [ 'items' => $this->rows ])
+        return view('companies::livewire.admin.companies-datatable', ['items' => $this->rows])
             ->extends('layouts.admin.app');
     }
 }

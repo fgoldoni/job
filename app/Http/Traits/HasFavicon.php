@@ -1,6 +1,4 @@
 <?php
-
-
 namespace App\Http\Traits;
 
 /**
@@ -10,5 +8,4 @@ namespace App\Http\Traits;
  */
 class HasFavicon
 {
-
 }

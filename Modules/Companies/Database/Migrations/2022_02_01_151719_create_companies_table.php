@@ -15,7 +15,8 @@ class CreateCompaniesTable extends Migration
     public function up()
     {
         Schema::create(
-            'companies', function (Blueprint $table) {
+            'companies',
+            function (Blueprint $table) {
                 $table->increments('id', true);
 
                 $table->string('name');
@@ -29,15 +30,14 @@ class CreateCompaniesTable extends Migration
                 $table->string('logo')->nullable();
                 $table->string('thumbnail')->nullable();
 
-
                 $table->softDeletes();
                 $table->timestamps();
             }
         );
 
         Schema::table('companies', function (Blueprint $table) {
-                $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-                $table->foreign('world_country_id')->references('id')->on('world_countries')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('world_country_id')->references('id')->on('world_countries')->onDelete('cascade');
         });
     }
 

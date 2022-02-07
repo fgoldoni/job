@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Settings\Http\Livewire\Admin\Settings;
 
 use Livewire\WithFileUploads;
@@ -65,7 +64,6 @@ class Site extends Settings
 
         $this->emit('saved');
     }
-
 
     public function render()
     {

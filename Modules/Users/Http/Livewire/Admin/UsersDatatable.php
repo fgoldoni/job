@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Users\Http\Livewire\Admin;
 
 use App\Http\Livewire\DataTable\WithBulkActions;
@@ -8,7 +7,6 @@ use App\Http\Livewire\DataTable\WithPerPagePagination;
 use App\Http\Livewire\DataTable\WithSorting;
 use App\Models\User;
 use Illuminate\Support\Carbon;
-use Illuminate\Validation\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -43,7 +41,7 @@ class UsersDatatable extends Component
     {
         return [
             'editing.name' => 'required|min:3',
-            'editing.email' => 'required|max:255|unique:users,email,'. $this->editing->id,
+            'editing.email' => 'required|max:255|unique:users,email,' . $this->editing->id,
             'avatar' => 'nullable|image|max:1000',
         ];
     }
@@ -69,7 +67,8 @@ class UsersDatatable extends Component
         return response()->streamDownload(
             function () {
                 echo $this->selectedRowsQuery->toCsv();
-            }, 'users.csv'
+            },
+            'users.csv'
         );
     }
 
@@ -81,7 +80,7 @@ class UsersDatatable extends Component
 
         $this->showDeleteModal = false;
 
-        $this->notify('You\'ve deleted '.$deleteCount.' users');
+        $this->notify('You\'ve deleted ' . $deleteCount . ' users');
     }
 
     public function makeBlankUser()
@@ -93,7 +92,7 @@ class UsersDatatable extends Component
     {
         $this->useCachedRows();
 
-        $this->showFilters = ! $this->showFilters;
+        $this->showFilters = !$this->showFilters;
     }
 
     public function create()
@@ -136,7 +135,7 @@ class UsersDatatable extends Component
 
         $this->avatar && $this->editing->update(
             [
-            'avatar_path' => $this->avatar->store('/', 'avatars'),
+                'avatar_path' => $this->avatar->store('/', 'avatars'),
             ]
         );
 
@@ -156,8 +155,8 @@ class UsersDatatable extends Component
     {
         $query = User::query()
             ->search($this->filters['search'])
-            ->when($this->filters['date-min'], fn($query, $date) => $query->where('created_at', '>=', Carbon::parse($date)))
-            ->when($this->filters['date-max'], fn($query, $date) => $query->where('created_at', '<=', Carbon::parse($date)));
+            ->when($this->filters['date-min'], fn ($query, $date) => $query->where('created_at', '>=', Carbon::parse($date)))
+            ->when($this->filters['date-max'], fn ($query, $date) => $query->where('created_at', '<=', Carbon::parse($date)));
 
         return $this->applySorting($query);
     }
@@ -173,7 +172,7 @@ class UsersDatatable extends Component
 
     public function render()
     {
-        return view('users::livewire.admin.users-datatable', [ 'items' => $this->rows ])
+        return view('users::livewire.admin.users-datatable', ['items' => $this->rows])
             ->extends('layouts.admin.app');
     }
 }

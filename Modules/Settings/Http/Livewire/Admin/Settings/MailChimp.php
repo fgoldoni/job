@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Settings\Http\Livewire\Admin\Settings;
 
 use Livewire\Component;

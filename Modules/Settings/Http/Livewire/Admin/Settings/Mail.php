@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Settings\Http\Livewire\Admin\Settings;
 
 use Illuminate\Validation\Rule;
@@ -49,7 +48,6 @@ class Mail extends Settings
         $this->mail_from = config('setting.mail_from');
         $this->mail_name = config('setting.mail_name');
         $this->mail_reply_to = config('setting.mail_reply_to');
-
 
         $this->mailgun_domain = config('setting.mailgun_domain');
         $this->mailgun_secret = config('setting.mailgun_secret');

@@ -1,10 +1,8 @@
 <?php
-
 namespace App\View\Components\Home;
 
 use Illuminate\View\Component;
 use Modules\Categories\Entities\Category;
-use Modules\Jobs\Entities\Job;
 
 class PopularCategories extends Component
 {
