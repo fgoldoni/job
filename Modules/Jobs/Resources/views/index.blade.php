@@ -175,7 +175,7 @@
                         </div>
                     </article>
                 </main>
-                <aside class="order-first flex flex-col flex-shrink-0 w-full lg:w-1/3 border-r border-gray-200">
+                <aside class="order-first flex flex-col flex-shrink-0 w-full lg:w-2/5 border-r border-gray-200">
                     <div class="px-6 pt-6 pb-4">
                         <h2 class="text-lg font-medium text-gray-900">Directory</h2>
                         <p class="mt-1 text-sm text-gray-600">Search directory of 3,018 employees</p>
@@ -219,6 +219,17 @@
                                                 <span class="absolute inset-0" aria-hidden="true"></span>
                                                 <p class="text-sm font-medium text-gray-900">Leslie Abbott</p>
                                                 <p class="text-sm text-gray-500 truncate">Co-Founder / CEO</p>
+                                            </a>
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <a href="#" class="focus:outline-none grid justify-items-end">
+                                                <!-- Extend touch target to entire panel -->
+                                                <span class="absolute inset-0" aria-hidden="true"></span>
+                                                <p class="text-sm font-medium text-gray-900">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                        <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+                                                    </svg>
+                                                </p>
                                             </a>
                                         </div>
                                     </div>

@@ -3,8 +3,10 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <div class="flex-shrink-0 flex items-center">
-                    <img class="block lg:hidden h-8 w-auto" src="{{ Storage::disk('logos')->url(config('setting.favicon')) }}" alt="Workflow">
-                    <img class="hidden lg:block h-8 w-auto" src="{{ Storage::disk('logos')->url(config('setting.logo')) }}" alt="Workflow">
+                    <a href="{{ url('/') }}">
+                        <img class="block lg:hidden h-8 w-auto" src="{{ Storage::disk('logos')->url(config('setting.favicon')) }}" alt="Workflow">
+                        <img class="hidden lg:block h-8 w-auto" src="{{ Storage::disk('logos')->url(config('setting.logo')) }}" alt="Workflow">
+                    </a>
                 </div>
                 <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                     <x-jet.nav-link href="{{ route('jobs') }}" :active="request()->routeIs('jobs')">
