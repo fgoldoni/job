@@ -3,7 +3,6 @@ const colors = require('tailwindcss/colors')
 
 
 module.exports = {
-    darkMode: 'class',
     theme: {
         extend: {
             fontFamily: {
@@ -45,5 +44,6 @@ module.exports = {
     plugins: [
         require('@tailwindcss/forms'),
         require('@tailwindcss/typography'),
+        require('tailwind-scrollbar'),
     ],
 };

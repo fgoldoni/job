@@ -19,6 +19,10 @@ class Colors extends Component
         'violet',
         'fuchsia',
         'green',
+        'rose',
+        'emerald',
+        'orange',
+        'red',
     ];
 
     public function updatedColor($value)

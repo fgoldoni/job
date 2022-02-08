@@ -6,11 +6,12 @@ use Database\Factories\JobFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Companies\Entities\Company;
+use Nicolaslopezj\Searchable\SearchableTrait;
 use Rinvex\Categories\Traits\Categorizable;
 
 class Job extends Model
 {
-    use HasFactory, Categorizable;
+    use HasFactory, Categorizable, SearchableTrait;
 
     protected $guarded = [];
 
@@ -18,6 +19,19 @@ class Job extends Model
     {
         return JobFactory::new();
     }
+
+    protected $searchable = [
+        'columns' => [
+            'jobs.id' => 10,
+            'jobs.name' => 10,
+            'companies.id' => 10,
+            'companies.name' => 10,
+        ],
+
+        'joins' => [
+            'companies' => ['companies.id', 'jobs.company_id'],
+        ],
+    ];
 
     /**
      * Wishes belongsTo with User.

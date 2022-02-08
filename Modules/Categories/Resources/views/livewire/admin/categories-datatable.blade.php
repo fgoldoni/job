@@ -126,12 +126,12 @@
 
                             <x-table.cell>
                                 <span href="#" class="inline-flex space-x-2 truncate text-sm leading-5">
-                                <x-icon.cash class="text-gray-400"/>
+                                    <x-icon.cash class="text-gray-400"/>
 
-                                <p class="text-gray-600 truncate">
-                                    {{ $item->name }}
-                                </p>
-                            </span>
+                                    <p class="text-gray-600 truncate">
+                                        {{ $item->name }}
+                                    </p>
+                                </span>
                             </x-table.cell>
 
                             <x-table.cell>
