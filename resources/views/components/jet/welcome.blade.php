@@ -1,117 +1,83 @@
 
 <!-- Section 1 -->
-<section class="relative py-20 bg-gray-100">
-    <img class="absolute top-0 left-0 hidden mt-12 lg:block" src="https://cdn.devdojo.com/assets/img/hero-bg-left.png">
-    <img class="absolute top-0 right-0 hidden mt-10 lg:block" src="https://cdn.devdojo.com/assets/img/hero-bg-right.png">
-    <div class="relative px-10 mx-auto max-w-7xl xl:px-16">
-        <div class="max-w-3xl mx-auto mb-12 text-center lg:mb-20">
-            <span class="text-sm font-semibold text-pink-500">Our Subscription Plans</span>
-            <h2 class="mt-3 mb-10 text-4xl font-bold font-heading">Simple, Flexible Pricing</h2>
-            <p class="mb-16 text-xl text-gray-500">We have a few subscription plans that will fit the needs of most businesses and individuals. Take a look at our subscription plans below.</p>
+<section class="relative w-full bg-white">
+    <div class="absolute inset-0 w-full h-full opacity-25 sm:opacity-50">
+        <svg class="absolute top-0 right-0 w-auto h-full opacity-75" viewBox="0 0 150 350" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M0 0h50v50H0z"></path><path d="M0 0h50v50H0z"></path><path d="M0 0h150v150H0z"></path></defs><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g><g fill="#DEB9FF" fill-rule="nonzero"><path d="M25 25c13.807 0 25-11.193 25-25H0c0 13.807 11.193 25 25 25z"></path></g><g transform="translate(0 100)"><mask fill="#fff"><use xlink:href="#path-1"></use></mask><path d="M25 0c13.807 0 25 11.193 25 25S38.807 50 25 50H0V0h25z" fill="#F9C7FF" mask="url(#mask-2)"></path></g><g transform="translate(100 100)"><mask fill="#fff"><use xlink:href="#path-3"></use></mask><path d="M25 25c13.807 0 25-11.193 25-25H0c0 13.807 11.193 25 25 25z" fill="#93FFFD" fill-rule="nonzero" mask="url(#mask-4)"></path></g><g transform="translate(0 200)"><mask fill="#fff"><use xlink:href="#path-5"></use></mask><path d="M75 75c0 41.421 33.579 75 75 75V0c-41.421 0-75 33.579-75 75z" fill="#93FFFD" fill-rule="nonzero" mask="url(#mask-6)"></path></g></g></g></svg>
+        <svg class="absolute top-0 left-0 w-auto h-full opacity-30" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M0 0h50v50H0z"></path><path d="M0 0h50v50H0z"></path></defs><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="matrix(-1 0 0 1 150 0)"><g transform="translate(0 25)" fill="#93FFFD" fill-rule="nonzero"><path d="M25 0C11.193 0 0 11.193 0 25h50C50 11.193 38.807 0 25 0z"></path></g><path d="M25 50C11.193 50 0 38.807 0 25S11.193 0 25 0h25v50H25z" transform="translate(100)" fill="#DEB9FF"></path><g transform="translate(0 100)"><mask fill="#fff"><use xlink:href="#path-1"></use></mask><path d="M25 50C11.193 50 0 38.807 0 25S11.193 0 25 0h25v50H25z" fill="#B3EBFF" mask="url(#mask-2)"></path></g><g transform="translate(100 200)"><mask fill="#fff"><use xlink:href="#path-3"></use></mask><path d="M25 50C11.193 50 0 38.807 0 25S11.193 0 25 0h25v50H25z" fill="#93FFFD" mask="url(#mask-4)"></path></g></g></g></svg>
+    </div>
+    <div class="relative w-full px-8 pt-16 pb-16 ml-auto mr-auto bg-top bg-cover sm:max-w-xl md:max-w-full md:px-24 lg:px-8 lg:py-24 lg:pb-32">
+        <div class="max-w-xl mb-10 ml-auto mr-auto bg-top bg-cover md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+            <p class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider uppercase bg-purple-600 rounded-full text-purple-50">Our Team</p>
+            <div class="max-w-2xl mb-6 ml-auto mr-auto font-sans tracking-tight text-gray-900 bg-top bg-cover sm:text-4xl md:mx-auto">
+                <p class="inline max-w-lg font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">Our Awesome Team of Unique Individuals</p>
+            </div>
+            <p class="text-base text-gray-700 md:text-lg">These are the amazing people that make us unique and stand-out amongst the competition. We are a team of focused and talented individuals.</p>
         </div>
-        <div class="px-6 py-6 mb-6 lg:pl-12 lg:pr-6 bg-gray-50 rounded-xl">
-            <div class="flex flex-col justify-between lg:flex-row">
-                <div class="w-full px-4 mb-4 lg:w-7/12 xl:w-8/12 lg:mb-0">
-                    <div class="max-w-xl pt-4 lg:pt-6">
-                        <div class="max-w-md mb-10">
-                            <h2 class="text-3xl font-semibold md:text-4xl font-heading">Pro Subscription</h2>
-                        </div>
-                        <p class="mb-10 text-xl text-gray-500">Our Pro Subscription will give you everything you and your company need to succeed. With this plan you will gain access to all our resources with premium support.</p>
-                        <ul class="flex flex-wrap text-base text-left lg:text-lg">
-                            <li class="flex items-center w-full mb-6 sm:w-1/2">
-                                <svg class="mr-2 text-pink-400 w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <p class="font-medium">Premium toolset</p>
-                            </li>
-                            <li class="flex items-center w-full mb-6 sm:w-1/2">
-                                <svg class="mr-2 text-pink-400 w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <p class="font-medium">Premium Support</p>
-                            </li>
-                            <li class="flex items-center w-full mb-6 sm:w-1/2">
-                                <svg class="mr-2 text-pink-400 w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <p class="font-medium">Unlimited Templates</p>
-                            </li>
-                            <li class="flex items-center w-full mb-6 sm:w-1/2">
-                                <svg class="mr-2 text-pink-400 w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <p class="font-medium">Upcoming Future Betas</p>
-                            </li>
-                            <li class="flex items-center w-full mb-6 sm:w-1/2">
-                                <svg class="mr-2 text-pink-400 w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <p class="font-medium">Customization Settings</p>
-                            </li>
-                            <li class="flex items-center w-full mb-6 sm:w-1/2">
-                                <svg class="mr-2 text-pink-400 w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <p class="font-medium">Company Branding</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="w-full px-4 lg:w-5/12 2xl:w-4/12">
-                    <div class="h-full p-12 text-center bg-white rounded-xl">
-                        <span class="inline-block px-3 py-1 mb-4 rounded bg-pink-50">
-                            <h3 class="text-xs font-semibold text-pink-500">Pro Features</h3>
-                        </span>
-                        <p class="mb-6 text-gray-500 lg:mb-12">Gain access to a Pro and get the most of your subscription.</p>
-                        <div class="flex justify-center mb-12">
-                            <span class="self-start inline-block mr-1 text-xl font-semibold text-gray-500">$</span>
-                            <p class="self-end text-5xl font-semibold font-heading">15<span class="ml-1 text-sm">/ month</span></p>
-                        </div>
-                        <a class="block py-4 mb-4 text-sm font-medium leading-normal text-center text-white transition duration-200 bg-pink-400 rounded hover:bg-pink-300" href="#">Upgrade to Pro</a>
-                        <p class="text-xs text-gray-500">No contract. Cancel Anytime</p>
-                    </div>
+        <div class="grid gap-10 row-gap-8 ml-auto mr-auto sm:row-gap-10 lg:max-w-screen-lg sm:grid-cols-2 lg:grid-cols-3">
+            <div class="flex items-center">
+                <img src="https://cdn.devdojo.com/images/july2021/03-Mike-Melcher.jpg" class="object-cover w-20 h-20 mr-4 rounded-full shadow">
+                <div class="relative">
+                    <p class="text-lg font-bold text-gray-800">Mike Melcher</p>
+                    <p class="text-sm text-gray-600">CEO &amp; Founder</p>
                 </div>
             </div>
-        </div>
-        <div class="px-6 py-6 mb-6 lg:pl-12 lg:pr-6 bg-gray-50 rounded-xl">
-            <div class="flex flex-col justify-between lg:flex-row">
-                <div class="w-full px-4 mb-4 lg:w-7/12 xl:w-8/12 lg:mb-0">
-                    <div class="max-w-xl pt-4 lg:pt-6">
-                        <div class="max-w-md mb-10">
-                            <h2 class="text-3xl font-semibold md:text-4xl font-heading">Plus Subscription</h2>
-                        </div>
-                        <p class="mb-10 text-xl text-gray-500">The plus subscription will give you most of the features you need to succeed. This is a perfect place to start if you want to try out the features before committing to a Pro plan.</p>
-                        <ul class="flex flex-wrap text-base text-left lg:text-lg">
-                            <li class="flex items-center w-full mb-6 sm:w-1/2">
-                                <svg class="mr-2 text-blue-400 w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <p class="font-medium">Basic toolset</p>
-                            </li>
-                            <li class="flex items-center w-full mb-6 sm:w-1/2">
-                                <svg class="mr-2 text-blue-400 w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <p class="font-medium">Email Support</p>
-                            </li>
-                            <li class="flex items-center w-full mb-6 sm:w-1/2">
-                                <svg class="mr-2 text-blue-400 w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <p class="font-medium">100+ Templates</p>
-                            </li>
-                            <li class="flex items-center w-full mb-6 sm:w-1/2">
-                                <svg class="mr-2 text-blue-400 w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <p class="font-medium">Exclusive Announcements</p>
-                            </li>
-                            <li class="flex items-center w-full mb-6 sm:w-1/2">
-                                <svg class="mr-2 text-blue-400 w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <p class="font-medium">Profile Settings</p>
-                            </li>
-                            <li class="flex items-center w-full mb-6 sm:w-1/2">
-                                <svg class="mr-2 text-blue-400 w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                <p class="font-medium">Color Branding</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="w-full px-4 lg:w-5/12 2xl:w-4/12">
-                    <div class="h-full p-12 text-center bg-white rounded-xl">
-                        <span class="inline-block px-3 py-1 mb-4 rounded bg-blue-50">
-                            <h3 class="text-xs font-semibold text-blue-500">Plus Features</h3>
-                        </span>
-                        <p class="mb-6 text-gray-500 lg:mb-12">Gain access to a Pro and get the most of your subscription.</p>
-                        <div class="flex justify-center mb-12">
-                            <span class="self-start inline-block mr-1 text-xl font-semibold text-gray-500">$</span>
-                            <p class="self-end text-5xl font-semibold font-heading">7<span class="ml-1 text-sm">/ month</span></p>
-                        </div>
-                        <a class="block py-4 mb-4 text-sm font-medium leading-normal text-center text-white transition duration-200 bg-blue-400 rounded hover:bg-blue-300" href="#">Upgrade to Pro</a>
-                        <p class="text-xs text-gray-500">No contract. Cancel Anytime</p>
-                    </div>
+            <div class="flex items-center">
+                <img src="https://cdn.devdojo.com/images/july2021/01-John-Cremson.jpg" class="object-cover w-20 h-20 mr-4 rounded-full shadow">
+                <div class="relative">
+                    <p class="text-lg font-bold text-gray-800">John Cremson</p>
+                    <p class="text-sm text-gray-600">Co-Founder</p>
                 </div>
             </div>
+            <div class="flex items-center">
+                <img src="https://cdn.devdojo.com/images/july2021/02-Sally-Jones.jpg" class="object-cover w-20 h-20 mr-4 rounded-full shadow">
+                <div class="relative">
+                    <p class="text-lg font-bold text-gray-800">Sally Jones</p>
+                    <p class="text-sm text-gray-600">Marketing Manager</p>
+                </div>
+            </div>
+            <div class="flex items-center">
+                <img src="https://cdn.devdojo.com/images/july2021/04-Barbara-Sanchez.jpg" class="object-cover w-20 h-20 mr-4 rounded-full shadow">
+                <div class="relative">
+                    <p class="text-lg font-bold text-gray-800">Barbara Sanchez</p>
+                    <p class="text-sm text-gray-600">SEO Specialist</p>
+                </div>
+            </div>
+            <div class="flex items-center">
+                <img src="https://cdn.devdojo.com/images/july2021/05-Sam-Lee.jpg" class="object-cover w-20 h-20 mr-4 rounded-full shadow">
+                <div class="relative">
+                    <p class="text-lg font-bold text-gray-800">Sam Lee</p>
+                    <p class="text-sm text-gray-600">Lead Designer</p>
+                </div>
+            </div>
+            <div class="flex items-center">
+                <img src="https://cdn.devdojo.com/images/july2021/06-Carly-Jenson.jpg" class="object-cover w-20 h-20 mr-4 rounded-full shadow">
+                <div class="relative">
+                    <p class="text-lg font-bold text-gray-800">Carly Jenson</p>
+                    <p class="text-sm text-gray-600">Designer</p>
+                </div>
+            </div>
+            <div class="flex items-center">
+                <img src="https://cdn.devdojo.com/images/july2021/07-Jeremy-Deen.png" class="object-cover w-20 h-20 mr-4 rounded-full shadow">
+                <div class="relative">
+                    <p class="text-lg font-bold text-gray-800">Jermy Deen</p>
+                    <p class="text-sm text-gray-600">Sales Manager</p>
+                </div>
+            </div>
+            <div class="flex items-center">
+                <img src="https://cdn.devdojo.com/images/july2021/08-Susan-Miller.jpg" class="object-cover w-20 h-20 mr-4 rounded-full shadow">
+                <div class="relative">
+                    <p class="text-lg font-bold text-gray-800">Susan Miller</p>
+                    <p class="text-sm text-gray-600">Developer</p>
+                </div>
+            </div>
+            <div class="flex items-center">
+                <img src="https://cdn.devdojo.com/images/july2021/paul-richards.jpg" class="object-cover w-20 h-20 mr-4 rounded-full shadow">
+                <div class="relative">
+                    <p class="text-lg font-bold text-gray-800">Paul Denson</p>
+                    <p class="text-sm text-gray-600">Developer</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
