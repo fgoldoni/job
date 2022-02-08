@@ -137,81 +137,79 @@
         <!-- Static sidebar for desktop -->
         <div class="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
             <!-- Sidebar component, swap this element with another sidebar if you like -->
-            <div class="flex flex-col flex-grow border-r border-gray-200 pt-5 bg-white overflow-y-auto">
+            <div class="flex flex-col flex-grow border-r border-gray-200 pt-5 bg-white overflow-y-auto scrollbar-thin scrollbar-thumb-{{ config('setting.color') }}-700 scrollbar-track-{{ config('setting.color') }}-300">
                 <div class="flex items-center flex-shrink-0 px-4">
                     <img class="h-8 w-auto" src="{{ Storage::disk('logos')->url(config('setting.logo')) }}" alt="Workflow">
                 </div>
                 <div class="mt-5 flex-grow flex flex-col">
-                    <nav class="flex-1 px-2 pb-4 space-y-1 divide-y divide-gray-200">
-                        <div class="px-2 space-y-1">
+                    <nav class="flex-1 mt-6">
+                        <div class="space-y-1">
                             <x-jet.sidebar-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                </svg>
+                                <x-icon.sidebar.report class="{{ request()->routeIs('admin.dashboard') ? 'text-' . config('setting.color') . '-500' : 'text-gray-400 group-hover:text-gray-500'}}" />
                                 {{ __('Reports') }}
                             </x-jet.sidebar-link>
 
                             <x-jet.sidebar-link href="{{ route('admin.users') }}" :active="request()->routeIs('admin.users')">
-                                <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                                </svg>
+                                <x-icon.sidebar.users class="{{ request()->routeIs('admin.users') ? 'text-' . config('setting.color') . '-500' : 'text-gray-400 group-hover:text-gray-500'}}" />
                                 {{ __('Users') }}
                             </x-jet.sidebar-link>
 
                             <x-jet.sidebar-link href="{{ route('admin.companies') }}" :active="request()->routeIs('admin.companies')">
-                                <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6 {{ request()->routeIs('admin.companies') ? 'text-purple-500' : 'text-gray-400 group-hover:text-gray-500'}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
                                 </svg>
                                 {{ __('Companies') }}
                             </x-jet.sidebar-link>
 
                             <x-jet.sidebar-link href="{{ route('admin.jobs') }}" :active="request()->routeIs('admin.jobs')">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6 {{ request()->routeIs('admin.jobs') ? 'text-purple-500' : 'text-gray-400 group-hover:text-gray-500'}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
                                 </svg>
                                 {{ __('Jobs') }}
                             </x-jet.sidebar-link>
 
                             <x-jet.sidebar-link href="{{ route('admin.transactions') }}" :active="request()->routeIs('admin.transactions')">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6 {{ request()->routeIs('admin.transactions') ? 'text-purple-500' : 'text-gray-400 group-hover:text-gray-500'}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                                 </svg>
                                 {{ __('Transactions') }}
                             </x-jet.sidebar-link>
                         </div>
-                        <div class="mt-6 pt-6">
-                            <div class="px-2 space-y-1">
+                        <div class="mt-8">
+                            <h3 class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider" id="desktop-teams-headline">Teams</h3>
+                            <div class="mt-1 space-y-1" role="group" aria-labelledby="desktop-teams-headline">
                                 <x-jet.sidebar-link href="{{ route('admin.categories') }}" :active="request()->routeIs('admin.categories')">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6 {{ request()->routeIs('admin.categories') ? 'text-purple-500' : 'text-gray-400 group-hover:text-gray-500'}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z" />
                                     </svg>
                                     {{ __('Categories') }}
                                 </x-jet.sidebar-link>
                                 <x-jet.sidebar-link href="{{ route('admin.settings') }}" :active="request()->routeIs('admin.settings')">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6 {{ request()->routeIs('admin.settings') ? 'text-purple-500' : 'text-gray-400 group-hover:text-gray-500'}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                     {{ __('Countries') }}
                                 </x-jet.sidebar-link>
 
                                 <x-jet.sidebar-link href="{{ route('admin.settings') }}" :active="request()->routeIs('admin.settings')">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6 {{ request()->routeIs('admin.settings') ? 'text-purple-500' : 'text-gray-400 group-hover:text-gray-500'}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                                     </svg>
                                     {{ __('States/Cities') }}
                                 </x-jet.sidebar-link>
                             </div>
                         </div>
-                        <div class="mt-6 pt-6">
-                            <div class="px-2 space-y-1">
+                        <div class="mt-8">
+                            <h3 class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider" id="desktop-teams-headline">Teams</h3>
+                            <div class="mt-1 space-y-1" role="group" aria-labelledby="desktop-teams-headline">
                                 <x-jet.sidebar-link href="{{ route('admin.settings.site') }}" :active="request()->routeIs('admin.settings.site')">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6 {{ request()->routeIs('admin.settings.site') ? 'text-purple-500' : 'text-gray-400 group-hover:text-gray-500'}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                     {{ __('My account') }}
                                 </x-jet.sidebar-link>
                                 <x-jet.sidebar-link href="{{ route('admin.settings.site') }}" :active="request()->routeIs('admin.settings.site')">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6 {{ request()->routeIs('admin.settings.site') ? 'text-purple-500' : 'text-gray-400 group-hover:text-gray-500'}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
@@ -219,7 +217,7 @@
                                 </x-jet.sidebar-link>
 
                                 <x-jet.sidebar-link href="{{ route('admin.settings') }}" :active="request()->routeIs('admin.settings')">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6 {{ request()->routeIs('admin.settings') ? 'text-purple-500' : 'text-gray-400 group-hover:text-gray-500'}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                     {{ __('Close account') }}

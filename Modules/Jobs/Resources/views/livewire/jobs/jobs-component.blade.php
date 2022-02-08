@@ -76,7 +76,7 @@
             <div class="flex-shrink-0 flex items-center px-4">
                 <img class="h-8 w-auto" src="{{ Storage::disk('logos')->url(config('setting.logo')) }}" alt="Workflow">
             </div>
-            <div class="mt-5 flex-1 h-0 overflow-y-auto scrollbar-thin scrollbar-thumb-{{ config('setting.color') }}-700 scrollbar-track-{{ config('setting.color') }}-300"">
+            <div class="mt-5 flex-1 h-0 overflow-y-auto scrollbar-thin scrollbar-thumb-{{ config('setting.color') }}-700 scrollbar-track-{{ config('setting.color') }}-300">
                 <nav class="px-2 space-y-1">
                     <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
                     <a href="#" class="bg-gray-100 text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
