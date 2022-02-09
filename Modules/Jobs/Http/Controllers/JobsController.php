@@ -4,6 +4,7 @@ namespace Modules\Jobs\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Jobs\Entities\Job;
 
 class JobsController extends Controller
 {
@@ -12,9 +13,11 @@ class JobsController extends Controller
      *
      * @return Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('jobs::index');
+        $job = Job::where('name', $request->get('job'))->first();
+
+        return view('jobs::index', ['job' => $job]);
     }
 
     /**

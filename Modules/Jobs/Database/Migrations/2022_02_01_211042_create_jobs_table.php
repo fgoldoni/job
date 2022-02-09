@@ -19,6 +19,7 @@ class CreateJobsTable extends Migration
                 $table->increments('id');
 
                 $table->string('name');
+                $table->string('slug');
                 $table->longText('content')->nullable();
                 $table->boolean('online')->default(false);
                 $table->integer('user_id')->unsigned()->index();

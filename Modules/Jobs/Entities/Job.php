@@ -8,10 +8,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Companies\Entities\Company;
 use Nicolaslopezj\Searchable\SearchableTrait;
 use Rinvex\Categories\Traits\Categorizable;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class Job extends Model
 {
-    use HasFactory, Categorizable, SearchableTrait;
+    use HasFactory, Categorizable, SearchableTrait, HasSlug;
 
     protected $guarded = [];
 
@@ -52,5 +54,12 @@ class Job extends Model
     public function scopePublished($query)
     {
         return $query->where('online', true);
+    }
+
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name')
+            ->saveSlugsTo('slug');
     }
 }

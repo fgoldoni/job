@@ -11,6 +11,7 @@
 |
 */
 
+use Modules\Jobs\Http\Livewire\Jobs\JobsComponent;
 use Modules\Users\Http\Livewire\Admin\UsersDatatable;
 
 Route::middleware(['auth', 'verified', 'role:User'])->prefix('admin')->group(function () {
@@ -18,5 +19,6 @@ Route::middleware(['auth', 'verified', 'role:User'])->prefix('admin')->group(fun
 });
 
 Route::prefix('jobs')->group(function () {
-    Route::get('/', [\Modules\Jobs\Http\Controllers\JobsController::class, 'index'])->name('jobs');
+    Route::get('/', JobsComponent::class)->name('jobs');
+    Route::get('/{slug}', JobsComponent::class)->name('jobs.job');
 });

@@ -19,6 +19,6 @@
                 </a>
             @endforeach
         </div>
-        <a href="#_" class="px-8 py-4 sm:w-auto w-full text-center text-base font-medium inline-block rounded text-white hover:bg-{{ config('setting.color') }}-600 bg-{{ config('setting.color') }}-500">View All Integrations</a>
+        <a href="#_" class="px-8 py-4 sm:w-auto w-full text-center text-base font-medium inline-block rounded text-white hover:bg-{{ config('setting.color') }}-600 bg-{{ config('setting.color') }}-500 shadow-xl transition-all duration-1000 delay-50 ease-in-out transform hover:-translate-y-2 hover:scale-102">View All Integrations</a>
     </div>
 </section>

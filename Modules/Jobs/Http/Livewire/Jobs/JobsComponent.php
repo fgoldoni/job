@@ -14,6 +14,8 @@ class JobsComponent extends Component
 {
     use WithPerPagePagination, WithSorting, WithBulkActions, WithCachedRows, WithFileUploads;
 
+    public ?Job $job;
+
     public $filters = [
         'search' => '',
         'status' => '',
@@ -22,6 +24,11 @@ class JobsComponent extends Component
         'date-min' => null,
         'date-max' => null,
     ];
+
+    public function mount($slug = null)
+    {
+        $this->job = Job::where('slug', $slug)->first();
+    }
 
     public function getRowsQueryProperty()
     {
@@ -39,6 +46,6 @@ class JobsComponent extends Component
 
     public function render()
     {
-        return view('jobs::livewire.jobs.jobs-component', ['items' => $this->rows]);
+        return view('jobs::livewire.jobs.jobs-component', ['items' => $this->rows, 'job' => $this->job]);
     }
 }

@@ -12,7 +12,7 @@
         </div>
         <div class="grid gap-10 row-gap-8 ml-auto mr-auto sm:row-gap-10 lg:max-w-screen-lg sm:grid-cols-1 lg:grid-cols-1">
             @foreach($items as $item)
-                <a href="#" class="block border-l-4 border-transparent hover:border-{{ config(('setting.color')) }}-900 shadow-lg hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                <a href="{{ route('jobs.job', ['slug' => $item->slug]) }}" class="block border-l-4 border-transparent hover:border-{{ config(('setting.color')) }}-900 shadow-lg hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
                     <div class="px-4 py-4 sm:px-6 space-y-6">
                         <div class="space-y-1">
                             <div class="flex items-center justify-between">
