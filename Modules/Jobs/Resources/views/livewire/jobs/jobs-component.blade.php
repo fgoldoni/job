@@ -44,8 +44,6 @@
                 x-transition:leave-start="translate-x-0"
                 x-transition:leave-end="-translate-x-full"
                 class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-white">
-                <img class="absolute top-0 left-0 hidden mt-12 lg:block opacity-25" src="https://cdn.devdojo.com/assets/img/hero-bg-left.png">
-                <img class="absolute top-0 right-0 hidden mt-10 lg:block opacity-25" src="https://cdn.devdojo.com/assets/img/hero-bg-right.png">
             <!--
               Close button, show/hide based on off-canvas menu state.
 
@@ -77,60 +75,86 @@
                 <img class="h-8 w-auto" src="{{ Storage::disk('logos')->url(config('setting.logo')) }}" alt="Workflow">
             </div>
             <div class="mt-5 flex-1 h-0 overflow-y-auto scrollbar-thin scrollbar-thumb-{{ config('setting.color') }}-700 scrollbar-track-{{ config('setting.color') }}-300">
-                <nav class="px-2 space-y-1">
-                    <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
-                    <a href="#" class="bg-gray-100 text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
-                        <!--
-                          Heroicon name: outline/home
+                <!-- Filters -->
+                <form class="mt-4">
+                    <div x-data="{ open: false }" class="border-t border-gray-200 px-4 py-6">
+                        <h3 class="-mx-2 -my-3 flow-root" @click="open = !open">
+                            <!-- Expand/collapse question button -->
+                            <button type="button" class="px-2 py-3 bg-white w-full flex items-center justify-between text-sm text-gray-400" aria-controls="filter-section-0" x-bind:aria-expanded="open.toString()">
+                                <span class="font-medium text-gray-900"> Category </span>
+                                <span class="ml-6 flex items-center">
+                                <!--
+                                  Expand/collapse icon, toggle classes based on question open state.
 
-                          Current: "text-gray-500", Default: "text-gray-400 group-hover:text-gray-500"
-                        -->
-                        <svg class="text-gray-500 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                        </svg>
-                        Dashboard
-                    </a>
+                                  Heroicon name: solid/chevron-down
 
-                    <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
-                        <!-- Heroicon name: outline/users -->
-                        <svg class="text-gray-400 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                        Team
-                    </a>
+                                  Open: "-rotate-180", Closed: "rotate-0"
+                                -->
+                                <svg class="rotate-0 h-5 w-5 transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                              </span>
+                            </button>
+                        </h3>
+                        <div x-show="open" x-cloak class="pt-6" id="filter-section-0">
+                            <div class="space-y-6">
+                                <div class="flex items-center">
+                                    <input id="filter-mobile-category-0" name="category[]" value="tees" type="checkbox" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label for="filter-mobile-category-0" class="ml-3 text-sm text-gray-500"> Tees </label>
+                                </div>
 
-                    <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
-                        <!-- Heroicon name: outline/folder -->
-                        <svg class="text-gray-400 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-                        </svg>
-                        Projects
-                    </a>
+                                <div class="flex items-center">
+                                    <input id="filter-mobile-category-1" name="category[]" value="crewnecks" type="checkbox" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label for="filter-mobile-category-1" class="ml-3 text-sm text-gray-500"> Crewnecks </label>
+                                </div>
 
-                    <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
-                        <!-- Heroicon name: outline/calendar -->
-                        <svg class="text-gray-400 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        Calendar
-                    </a>
+                                <div class="flex items-center">
+                                    <input id="filter-mobile-category-2" name="category[]" value="hats" type="checkbox" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label for="filter-mobile-category-2" class="ml-3 text-sm text-gray-500"> Hats </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
-                        <!-- Heroicon name: outline/inbox -->
-                        <svg class="text-gray-400 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
-                        </svg>
-                        Documents
-                    </a>
+                    <div x-data="{ open: false }" class="border-t border-gray-200 px-4 py-6">
+                        <h3 class="-mx-2 -my-3 flow-root">
+                            <!-- Expand/collapse question button -->
+                            <button @click="open = !open" type="button" class="px-2 py-3 bg-white w-full flex items-center justify-between text-sm text-gray-400" aria-controls="filter-section-1" aria-expanded="false">
+                                <span class="font-medium text-gray-900"> Brand </span>
+                                <span class="ml-6 flex items-center">
+                                <!--
+                                  Expand/collapse icon, toggle classes based on question open state.
 
-                    <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
-                        <!-- Heroicon name: outline/chart-bar -->
-                        <svg class="text-gray-400 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                        </svg>
-                        Reports
-                    </a>
-                </nav>
+                                  Heroicon name: solid/chevron-down
+
+                                  Open: "-rotate-180", Closed: "rotate-0"
+                                -->
+                                <svg class="rotate-0 h-5 w-5 transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                              </span>
+                            </button>
+                        </h3>
+                        <div x-show="open" x-cloak class="pt-6" id="filter-section-1">
+                            <div class="space-y-6">
+                                <div class="flex items-center">
+                                    <input id="filter-mobile-brand-0" name="brand[]" value="clothing-company" type="checkbox" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label for="filter-mobile-brand-0" class="ml-3 text-sm text-gray-500"> Clothing Company </label>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <input id="filter-mobile-brand-1" name="brand[]" value="fashion-inc" type="checkbox" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label for="filter-mobile-brand-1" class="ml-3 text-sm text-gray-500"> Fashion Inc. </label>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <input id="filter-mobile-brand-2" name="brand[]" value="shoes-n-more" type="checkbox" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label for="filter-mobile-brand-2" class="ml-3 text-sm text-gray-500"> Shoes &#039;n More </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
 
@@ -150,8 +174,11 @@
                             <div class="flex-shrink-0">
                                 <img class="mx-auto h-20 w-20 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                             </div>
-                            <div class="flex-1 min-w-0">
+                            <div class="flex-1 min-w-0 space-y-1">
                                 <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Back End Developer</h2>
+                                <p class="text-gray-500">
+                                    Reinger-Feil
+                                </p>
                                 <div class="mt-1 flex flex-col xl:flex-row xl:flex-wrap xl:mt-0 xl:space-x-6">
                                     <div class="mt-2 flex items-center text-sm text-gray-500">
                                         <!-- Heroicon name: solid/briefcase -->
@@ -207,7 +234,7 @@
                               </span>
 
                              <span class="sm:ml-3">
-                              <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                              <button type="button" class="inline-flex items-center justify-center px-4 py-2 border-2 border-{{ config('setting.color') }}-300 shadow-lg hover:shadow-xl text-sm font-medium rounded-md text-{{ config('setting.color') }}-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
                                 <!-- Heroicon name: solid/check -->
                                 <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
