@@ -9,7 +9,7 @@
 --}}
 
 @props([
-'leadingAddOn' => false,
+    'leadingAddOn' => false,
 ])
 
 <div class="flex rounded-md shadow-sm">
