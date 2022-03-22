@@ -49,6 +49,7 @@ refresh: migrate ## refresh + php artisan module:seed Admin & php artisan module
 	php artisan module:migrate-refresh Settings
 	php artisan module:migrate-refresh Companies
 	php artisan module:migrate-refresh Jobs
+	php artisan module:migrate-refresh Plans
 	php artisan module:seed Roles
 	php artisan module:seed Users
 	php artisan module:seed Categories
